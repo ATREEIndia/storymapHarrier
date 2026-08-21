@@ -7,9 +7,9 @@ import { locations } from "@/data/locations";
 // NEVER import ArcGIS at top level — it crashes Next.js SSR.
 
 interface MapControls {
-  goToLocation:     (idx: number) => Promise<void>;
+  goToLocation: (idx: number) => Promise<void>;
   goToPrevLocation: (idx: number) => Promise<void>;
-  zoomToShowAll:    () => Promise<void>;
+  zoomToShowAll: () => Promise<void>;
 }
 
 interface Props {
@@ -30,12 +30,12 @@ function easeInOutCubic(t: number): number {
 function calculateBearing(from: number[], to: number[]): number {
   const toRad = (d: number) => (d * Math.PI) / 180;
   const toDeg = (r: number) => (r * 180) / Math.PI;
-  const lat1  = toRad(from[1]);
-  const lat2  = toRad(to[1]);
-  const dLng  = toRad(to[0] - from[0]);
-  const x     = Math.sin(dLng) * Math.cos(lat2);
-  const y     = Math.cos(lat1) * Math.sin(lat2)
-              - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+  const lat1 = toRad(from[1]);
+  const lat2 = toRad(to[1]);
+  const dLng = toRad(to[0] - from[0]);
+  const x = Math.sin(dLng) * Math.cos(lat2);
+  const y = Math.cos(lat1) * Math.sin(lat2)
+    - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
   return (toDeg(Math.atan2(x, y)) + 360) % 360;
 }
 
@@ -45,7 +45,7 @@ function calculateBearing(from: number[], to: number[]): number {
 // because ArcGIS Polyline paths use [lng, lat] order.
 function getCatmullRomPoints(
   waypoints: { lat: number; lng: number }[],
-  steps:     number = 80
+  steps: number = 80
 ): number[][] {
   if (waypoints.length < 2) return [];
 
@@ -60,24 +60,24 @@ function getCatmullRomPoints(
 
   for (let i = 1; i < pts.length - 2; i++) {
     const p0 = pts[i - 1], p1 = pts[i],
-          p2 = pts[i + 1], p3 = pts[i + 2];
+      p2 = pts[i + 1], p3 = pts[i + 2];
 
     for (let j = 0; j <= steps; j++) {
-      const t  = j / steps;
+      const t = j / steps;
       const t2 = t * t;
       const t3 = t2 * t;
 
       const lat = 0.5 * (
         2 * p1.lat +
         (-p0.lat + p2.lat) * t +
-        (2*p0.lat - 5*p1.lat + 4*p2.lat - p3.lat) * t2 +
-        (-p0.lat + 3*p1.lat - 3*p2.lat + p3.lat) * t3
+        (2 * p0.lat - 5 * p1.lat + 4 * p2.lat - p3.lat) * t2 +
+        (-p0.lat + 3 * p1.lat - 3 * p2.lat + p3.lat) * t3
       );
       const lng = 0.5 * (
         2 * p1.lng +
         (-p0.lng + p2.lng) * t +
-        (2*p0.lng - 5*p1.lng + 4*p2.lng - p3.lng) * t2 +
-        (-p0.lng + 3*p1.lng - 3*p2.lng + p3.lng) * t3
+        (2 * p0.lng - 5 * p1.lng + 4 * p2.lng - p3.lng) * t2 +
+        (-p0.lng + 3 * p1.lng - 3 * p2.lng + p3.lng) * t3
       );
 
       result.push([lng, lat]); // ArcGIS order: longitude first
@@ -88,8 +88,10 @@ function getCatmullRomPoints(
 }
 
 export default function ArcGISMap({ onReady }: Props) {
-  const mapRef     = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const birdImgRef = useRef<HTMLImageElement>(null);
+  const birdPosRef = useRef({ lat: 0, lng: 0 });
 
   useEffect(() => {
     let mapView: any = null;
@@ -142,24 +144,58 @@ export default function ArcGISMap({ onReady }: Props) {
       // ── Dynamic ArcGIS imports ────────────────────────────────────────────
       // Import ALL modules here at the top of initMap in one block.
       // Do not scatter imports throughout the function.
+      // const Map = (await import("@arcgis/core/Map")).default;
 
-      const esriConfig          = (await import("@arcgis/core/config")).default;
-      const Map                 = (await import("@arcgis/core/Map")).default;
-      const SceneView           = (await import("@arcgis/core/views/SceneView")).default;
-      const TileLayer           = (await import("@arcgis/core/layers/TileLayer")).default;
-      const GraphicsLayer       = (await import("@arcgis/core/layers/GraphicsLayer")).default;
-      const Graphic             = (await import("@arcgis/core/Graphic")).default;
-      const Point               = (await import("@arcgis/core/geometry/Point")).default;
-      const Polyline            = (await import("@arcgis/core/geometry/Polyline")).default;
-      const Extent              = (await import("@arcgis/core/geometry/Extent")).default;
-      const SimpleMarkerSymbol  = (await import("@arcgis/core/symbols/SimpleMarkerSymbol")).default;
-      const SimpleLineSymbol    = (await import("@arcgis/core/symbols/SimpleLineSymbol")).default;
-      const TextSymbol          = (await import("@arcgis/core/symbols/TextSymbol")).default;
-      const PictureMarkerSymbol = (await import("@arcgis/core/symbols/PictureMarkerSymbol")).default;
+      // const esriConfig          = (await import("@arcgis/core/config")).default;
+      // const Map0                 = (await import("@arcgis/core/Map")).default;
+      // const SceneView           = (await import("@arcgis/core/views/SceneView")).default;
+      // const TileLayer           = (await import("@arcgis/core/layers/TileLayer")).default;
+      // const GraphicsLayer       = (await import("@arcgis/core/layers/GraphicsLayer")).default;
+      // const Graphic             = (await import("@arcgis/core/Graphic")).default;
+      // const Point               = (await import("@arcgis/core/geometry/Point")).default;
+      // const Polyline            = (await import("@arcgis/core/geometry/Polyline")).default;
+      // const Extent              = (await import("@arcgis/core/geometry/Extent")).default;
+      // const SimpleMarkerSymbol  = (await import("@arcgis/core/symbols/SimpleMarkerSymbol")).default;
+      // const SimpleLineSymbol    = (await import("@arcgis/core/symbols/SimpleLineSymbol")).default;
+      // const TextSymbol          = (await import("@arcgis/core/symbols/TextSymbol")).default;
+      // const PictureMarkerSymbol = (await import("@arcgis/core/symbols/PictureMarkerSymbol")).default;
+
+
+      const [
+        esriConfig,
+        Map,
+        SceneView,
+        GraphicsLayer,
+        Graphic,
+        Point,
+        Polyline,
+        Extent,
+        SimpleMarkerSymbol,
+        SimpleLineSymbol,
+        TextSymbol,
+        PictureMarkerSymbol,
+      ] = await new Promise<any[]>((resolve) => {
+        (window as any).require([
+          "esri/config",
+          "esri/Map",
+          "esri/views/SceneView",
+          "esri/layers/GraphicsLayer",
+          "esri/Graphic",
+          "esri/geometry/Point",
+          "esri/geometry/Polyline",
+          "esri/geometry/Extent",
+          "esri/symbols/SimpleMarkerSymbol",
+          "esri/symbols/SimpleLineSymbol",
+          "esri/symbols/TextSymbol",
+          "esri/symbols/PictureMarkerSymbol",
+        ], (...modules: any[]) => resolve(modules));
+      });
+
+      // Set API key exactly as before
+      esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
 
       if (cancelled) return;
 
-      esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
 
       // ── Map — pure satellite, no labels ──────────────────────────────────
       const map = new Map({
@@ -170,7 +206,7 @@ export default function ArcGISMap({ onReady }: Props) {
         //     }),
         //   ],
         // },
-          basemap: "arcgis/imagery",
+        basemap: "arcgis/imagery",
         ground: "world-elevation",
       });
 
@@ -182,43 +218,93 @@ export default function ArcGISMap({ onReady }: Props) {
         map,
         // Use center + zoom for initial position — more reliable than
         // camera for centering at a specific coordinate
-        center:  [first.lng, first.lat],
-        zoom:    first.zoom,
-        ui:          { components: [] },
+        center: [first.lng, first.lat],
+        zoom: first.zoom,
+        ui: { components: [] },
         environment: {
           atmosphereEnabled: true,
-          starsEnabled:      false,
+          starsEnabled: false,
         },
       });
 
       await mapView.when();
 
+      // ── CSS bird overlay ─────────────────────────────────────────────────
+      // The bird is an HTML <img> positioned over the map via
+      // mapView.toScreen(), rotated with a CSS transform. This avoids
+      // ArcGIS's PictureMarkerSymbol angle issues and needs no canvas.
+      const updateBirdOverlay = (
+        lat: number,
+        lng: number,
+        angleDeg: number,
+        imgUrl: string
+      ) => {
+        const el = birdImgRef.current;
+        if (!el || !mapView) return;
+
+        const screenPt = mapView.toScreen(new Point({
+          latitude: lat,
+          longitude: lng,
+        }));
+
+        if (!screenPt) return;
+
+        birdPosRef.current = { lat, lng };
+        el.src = imgUrl;
+        el.style.display = "block";
+        el.style.left = `${screenPt.x - 26}px`; // center horizontally
+        el.style.top = `${screenPt.y - 53}px`; // center vertically
+        el.style.transform = `rotate(${angleDeg}deg)`;
+      };
+
+      const hideBirdOverlay = () => {
+        const el = birdImgRef.current;
+        if (el) el.style.display = "none";
+      };
+
+      // Reposition bird overlay whenever the camera moves (goTo pans/tilts)
+      mapView.watch("camera", () => {
+        const el = birdImgRef.current;
+        if (!el || el.style.display === "none") return;
+
+        const screenPt = mapView.toScreen(new Point({
+          latitude: birdPosRef.current.lat,
+          longitude: birdPosRef.current.lng,
+        }));
+        if (!screenPt) return;
+        el.style.left = `${screenPt.x - 26}px`;
+        el.style.top = `${screenPt.y - 26}px`;
+      });
+
+      // Show bird after map is ready
+      updateBirdOverlay(first.lat, first.lng, first.angle, "/harrier-sitting.png");
+
       // ── Disable ALL user interaction ──────────────────────────────────────
-      mapView.on("drag",         (e: any) => e.stopPropagation());
-      mapView.on("mouse-wheel",  (e: any) => e.stopPropagation());
+      mapView.on("drag", (e: any) => e.stopPropagation());
+      mapView.on("mouse-wheel", (e: any) => e.stopPropagation());
       mapView.on("double-click", (e: any) => e.stopPropagation());
-      mapView.on("key-down",     (e: any) => e.stopPropagation());
-      mapView.on("hold",         (e: any) => e.stopPropagation());
+      mapView.on("key-down", (e: any) => e.stopPropagation());
+      mapView.on("hold", (e: any) => e.stopPropagation());
 
       // ── Graphics layers ───────────────────────────────────────────────────
       // Order matters: trailLayer renders below markerLayer
       // Bird and dots always appear above trail lines
-      const trailLayer  = new GraphicsLayer();
+      const trailLayer = new GraphicsLayer();
       const markerLayer = new GraphicsLayer();
       map.addMany([trailLayer, markerLayer]);
 
       // ── Shared symbols ────────────────────────────────────────────────────
       const dotSymbol = new SimpleMarkerSymbol({
-        style:   "circle",
-        size:    "10px",
-        color:   "#FFD700",
+        style: "circle",
+        size: "10px",
+        color: "#FFD700",
         outline: { color: "#000000", width: 1.5 },
       });
 
       const neighborDotSymbol = new SimpleMarkerSymbol({
-        style:   "circle",
-        size:    "7px",
-        color:   [255, 215, 0, 0.75],
+        style: "circle",
+        size: "7px",
+        color: [255, 215, 0, 0.75],
         outline: { color: [0, 0, 0, 0.5], width: 1 },
       });
 
@@ -231,13 +317,13 @@ export default function ArcGISMap({ onReady }: Props) {
       // ── Precompute all Catmull-Rom segment paths ──────────────────────────
       // Do this once on load so animations never have to compute points
       for (let i = 1; i < locations.length; i++) {
-        const loc     = locations[i];
+        const loc = locations[i];
         const prevLoc = locations[i - 1];
 
         const allWaypoints = [
           { lat: prevLoc.lat, lng: prevLoc.lng },
           ...loc.waypoints,
-          { lat: loc.lat,     lng: loc.lng     },
+          { lat: loc.lat, lng: loc.lng },
         ];
 
         segmentPoints.set(i, getCatmullRomPoints(allWaypoints, 80));
@@ -249,17 +335,17 @@ export default function ArcGISMap({ onReady }: Props) {
         const loc = locations[idx];
         const dot = new Graphic({
           geometry: new Point({ latitude: loc.lat, longitude: loc.lng }),
-          symbol:   dotSymbol,
+          symbol: dotSymbol,
         });
         const label = new Graphic({
           geometry: new Point({ latitude: loc.lat, longitude: loc.lng }),
           symbol: new TextSymbol({
-            text:      loc.title,
-            color:     "#FFD700",
+            text: loc.title,
+            color: "#FFD700",
             haloColor: "#000000",
-            haloSize:  1.5,
-            yoffset:   16,
-            font:      { size: 11, weight: "bold" },
+            haloSize: 1.5,
+            yoffset: 46,
+            font: { size: 11, weight: "bold" },
           }),
         });
         markerLayer.addMany([dot, label]);
@@ -278,11 +364,11 @@ export default function ArcGISMap({ onReady }: Props) {
       // ── Helper: add neighbor dots ─────────────────────────────────────────
       const addNeighborDots = (idx: number) => {
         if (neighborGraphicsMap.has(idx)) return;
-        const loc      = locations[idx];
+        const loc = locations[idx];
         const graphics = loc.neighbors.map((n) =>
           new Graphic({
             geometry: new Point({ latitude: n.lat, longitude: n.lng }),
-            symbol:   neighborDotSymbol,
+            symbol: neighborDotSymbol,
             attributes: {
               // Only store label if neighbor_label is true
               label: n.neighbor_label ? n.label : null,
@@ -306,24 +392,6 @@ export default function ArcGISMap({ onReady }: Props) {
       addLocationMarker(0);
       addNeighborDots(0);
 
-      // ── Bird graphic ──────────────────────────────────────────────────────
-      // MUST be defined before animateTrail because animateTrail
-      // updates birdGraphic.geometry and birdGraphic.symbol each frame
-      const birdGraphic = new Graphic({
-        geometry: new Point({
-          latitude:  first.lat,
-          longitude: first.lng,
-        }),
-        symbol: new PictureMarkerSymbol({
-          url:    "/harrier-sitting.png",
-          width:  "52px",
-          height: "52px",
-          angle:  first.angle,
-          yoffset:50,
-        }),
-      });
-      markerLayer.add(birdGraphic);
-
       // ── animateTrail ──────────────────────────────────────────────────────
       // Animates the trail drawing for one segment.
       // segmentIdx: which segment (matches destination location index)
@@ -333,27 +401,32 @@ export default function ArcGISMap({ onReady }: Props) {
 
       const animateTrail = (
         segmentIdx: number,
-        direction:  "forward" | "backward",
+        direction: "forward" | "backward",
         onComplete: () => void
       ): (() => void) => {
         const pts = segmentPoints.get(segmentIdx);
-        if (!pts || pts.length < 2) { onComplete(); return () => {}; }
+        if (!pts || pts.length < 2) { onComplete(); return () => { }; }
 
         // Reverse points for backward animation
         const drawPts = direction === "backward" ? [...pts].reverse() : pts;
 
-        const DURATION  = 3500;
+        const DURATION = 3500;
         const startTime = performance.now();
-        let   rafId     = 0;
-        let   cancelled = false;
+        let rafId = 0;
+        let cancelled = false;
+
+        const loc = locations[
+          direction === "forward" ? segmentIdx : segmentIdx - 1
+        ];
+        const angleOffset = loc?.angle ?? 0;
 
         const tick = (now: number) => {
           if (cancelled) return;
 
-          const elapsed       = now - startTime;
-          const progress      = Math.min(elapsed / DURATION, 1);
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / DURATION, 1);
           const easedProgress = easeInOutCubic(progress);
-          const count         = Math.floor(easedProgress * drawPts.length);
+          const count = Math.floor(easedProgress * drawPts.length);
 
           if (count >= 2) {
             // Remove previous animated graphic — always keep only one
@@ -373,36 +446,20 @@ export default function ArcGISMap({ onReady }: Props) {
             trailLayer.add(currentTrailGraphic);
 
             // Move bird to the tip of the drawn trail
-            const tip  = drawPts[count - 1];
+            const tip = drawPts[count - 1];
             const next = drawPts[Math.min(count, drawPts.length - 1)];
 
             if (tip && next && tip[0] !== undefined && next[0] !== undefined) {
               const rawBearing = calculateBearing(tip, next);
-              // Add per-location angle offset so bird faces correctly
-              const loc         = locations[
-                direction === "forward" ? segmentIdx : segmentIdx - 1
-              ];
-              const angleOffset = loc?.angle ?? 0;
+              const finalAngle = (rawBearing + angleOffset) % 360;
 
-              birdGraphic.geometry = new Point({
-                longitude: tip[0],
-                latitude:  tip[1],
-              });
-
-              // Show flying image while animating
-              birdGraphic.symbol = new PictureMarkerSymbol({
-                url:    "/harrier-flying.png",
-                width:  "52px",
-                height: "52px",
-                angle:  (rawBearing + angleOffset) % 360,
-              });
+              updateBirdOverlay(tip[1], tip[0], finalAngle, "/harrier-flying.png");
             }
           }
 
           if (progress < 1 && !cancelled) {
             rafId = requestAnimationFrame(tick);
           } else if (!cancelled) {
-            // Animation complete — clean up animated graphic
             if (currentTrailGraphic) {
               trailLayer.remove(currentTrailGraphic);
               currentTrailGraphic = null;
@@ -433,7 +490,6 @@ export default function ArcGISMap({ onReady }: Props) {
       // 5. Places sitting bird, neighbor dots, location marker on complete
 
       const goToLocation = async (idx: number): Promise<void> => {
-        console.log("goToLocation called with idx:", idx);
         if (idx < 0 || idx >= locations.length) return;
 
         navigationToken++;
@@ -470,27 +526,19 @@ export default function ArcGISMap({ onReady }: Props) {
         await mapView.goTo(
           {
             target: new Point({
-              latitude:  loc.lat,
+              latitude: loc.lat,
               longitude: loc.lng,
             }),
-            zoom:    loc.zoom,
-            tilt:    loc.tilt,
+            zoom: loc.zoom,
+            tilt: loc.tilt,
             heading: loc.heading,
           },
           { duration: loc.duration, easing: "ease-in-out" }
-        ).catch(() => {}); // ignore AbortError from rapid scroll
+        ).catch(() => { }); // ignore AbortError from rapid scroll
 
         // First location — just place sitting bird, no trail
         if (idx === 0) {
-          birdGraphic.geometry = new Point({
-            latitude:  loc.lat,
-            longitude: loc.lng,
-          });
-          birdGraphic.symbol = new PictureMarkerSymbol({
-            url: "/harrier-sitting.png", width: "52px",
-            height: "52px", angle: loc.angle,
-            yoffset:50,
-          });
+          updateBirdOverlay(loc.lat, loc.lng, loc.angle, "/harrier-sitting.png");
           activeIndex = 0;
           return;
         }
@@ -535,15 +583,7 @@ export default function ArcGISMap({ onReady }: Props) {
           }
 
           // Switch bird to sitting pose at destination
-          birdGraphic.geometry = new Point({
-            latitude:  loc.lat,
-            longitude: loc.lng,
-          });
-          birdGraphic.symbol = new PictureMarkerSymbol({
-            url: "/harrier-sitting.png", width: "52px",
-            height: "52px", angle: loc.angle,
-            yoffset:50,
-          });
+          updateBirdOverlay(loc.lat, loc.lng, loc.angle, "/harrier-sitting.png");
 
           // Add markers for this location
           addLocationMarker(idx);
@@ -571,7 +611,6 @@ export default function ArcGISMap({ onReady }: Props) {
       // 5. Places sitting bird at previous location on complete
 
       const goToPrevLocation = async (idx: number): Promise<void> => {
-        console.log("goToPrevLocation called with idx:", idx);
         if (idx < 0 || idx >= locations.length) return;
 
         navigationToken++;
@@ -588,15 +627,15 @@ export default function ArcGISMap({ onReady }: Props) {
         await mapView.goTo(
           {
             target: new Point({
-              latitude:  loc.lat,
+              latitude: loc.lat,
               longitude: loc.lng,
             }),
-            zoom:    loc.zoom,
-            tilt:    loc.tilt,
+            zoom: loc.zoom,
+            tilt: loc.tilt,
             heading: loc.heading,
           },
           { duration: loc.duration, easing: "ease-in-out" }
-        ).catch(() => {});
+        ).catch(() => { });
 
         // The segment we are reversing is activeIndex
         // (the trail from idx → activeIndex)
@@ -615,17 +654,7 @@ export default function ArcGISMap({ onReady }: Props) {
         // Animate trail backward — does NOT block goToPrevLocation from resolving
         const cancel = animateTrail(segIdx, "backward", () => {
           // Place bird sitting at destination (going back to idx)
-          birdGraphic.geometry = new Point({
-            latitude:  loc.lat,
-            longitude: loc.lng,
-          });
-          birdGraphic.symbol = new PictureMarkerSymbol({
-            url:    "/harrier-sitting.png",
-            width:  "52px",
-            height: "52px",
-            angle:  loc.angle,
-            yoffset:50,
-          });
+          updateBirdOverlay(loc.lat, loc.lng, loc.angle, "/harrier-sitting.png");
           activeIndex = idx;
         });
         cancelCurrentAnimation = cancel;
@@ -657,7 +686,7 @@ export default function ArcGISMap({ onReady }: Props) {
 
         const lats = locations.map(l => l.lat);
         const lngs = locations.map(l => l.lng);
-        const pad  = 1.5; // degrees padding
+        const pad = 1.5; // degrees padding
 
         const extent = new Extent({
           xmin: Math.min(...lngs) - pad,
@@ -681,19 +710,19 @@ export default function ArcGISMap({ onReady }: Props) {
         const shots = [
           // { heading: FINAL_HEADING - 90, tilt: FINAL_TILT, duration: 2200 }, // side approach — west
           // { heading: FINAL_HEADING + 90, tilt: FINAL_TILT, duration: 2200 }, // arc across — east
-          { heading: FINAL_HEADING,      tilt: FINAL_TILT, duration: 3000 }, // settle — hero shot
+          { heading: FINAL_HEADING, tilt: FINAL_TILT, duration: 3000 }, // settle — hero shot
         ];
 
         for (const shot of shots) {
           if (myToken !== navigationToken) return; // user scrolled away — abandon remaining shots
           await mapView.goTo(
             {
-              target:  extent,
-              tilt:    shot.tilt,
+              target: extent,
+              tilt: shot.tilt,
               heading: ((shot.heading % 360) + 360) % 360,
             },
             { duration: shot.duration, easing: "ease-in-out" }
-          ).catch(() => {});
+          ).catch(() => { });
         }
       };
 
@@ -710,16 +739,16 @@ export default function ArcGISMap({ onReady }: Props) {
           include: [markerLayer],
         });
 
-        const hit   = response.results?.[0]?.graphic;
+        const hit = response.results?.[0]?.graphic;
         const label = hit?.attributes?.label as string | null;
 
         if (label) {
-          tooltip.style.opacity  = "1";
-          tooltip.style.left     = `${event.x + 14}px`;
-          tooltip.style.top      = `${event.y - 34}px`;
-          tooltip.textContent    = label;
+          tooltip.style.opacity = "1";
+          tooltip.style.left = `${event.x + 14}px`;
+          tooltip.style.top = `${event.y - 34}px`;
+          tooltip.textContent = label;
         } else {
-          tooltip.style.opacity  = "0";
+          tooltip.style.opacity = "0";
         }
       });
 
@@ -751,24 +780,42 @@ export default function ArcGISMap({ onReady }: Props) {
       {/* ArcGIS renders into this div */}
       <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
 
+      {/* Bird overlay — CSS positioned over the map */}
+      <img
+        ref={birdImgRef}
+        src="/harrier-sitting.png"
+        alt="harrier"
+        style={{
+          position: "absolute",
+          width: "52px",
+          height: "52px",
+          pointerEvents: "none",
+          zIndex: 5,
+          display: "none",
+          transformOrigin: "center center",
+          transition: "none",
+          objectFit: "contain",
+        }}
+      />
+
       {/* HTML tooltip — faster than ArcGIS popup, no latency */}
       <div
         ref={tooltipRef}
         style={{
-          position:      "absolute",
-          top:           0,
-          left:          0,
-          background:    "rgba(0,0,0,0.82)",
-          color:         "#ffffff",
-          fontSize:      "11px",
-          padding:       "5px 10px",
-          borderRadius:  "4px",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          background: "rgba(0,0,0,0.82)",
+          color: "#ffffff",
+          fontSize: "11px",
+          padding: "5px 10px",
+          borderRadius: "4px",
           pointerEvents: "none",
-          whiteSpace:    "nowrap",
-          opacity:       0,
-          transition:    "opacity 0.15s ease",
+          whiteSpace: "nowrap",
+          opacity: 0,
+          transition: "opacity 0.15s ease",
           letterSpacing: "0.03em",
-          zIndex:        10,
+          zIndex: 10,
         }}
       />
     </div>

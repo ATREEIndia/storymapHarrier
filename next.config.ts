@@ -22,17 +22,7 @@ const nextConfig: NextConfig = {
 
 
   turbopack:{},
-  webpack:(config)=>{
-    config.resolve.fallback={
-      ...config,
-      fs:false,
-      path:false,
-      crypto:false
-    }
-    return config
 
-
-  }
   
 };
 
