@@ -253,7 +253,7 @@ export default function ArcGISMap({ onReady }: Props) {
         el.src = imgUrl;
         el.style.display = "block";
         el.style.left = `${screenPt.x - 26}px`; // center horizontally
-        el.style.top = `${screenPt.y - 53}px`; // center vertically
+        el.style.top = `${screenPt.y - 20}px`; // center vertically
         el.style.transform = `rotate(${angleDeg}deg)`;
       };
 

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Following Gangai",
-  description: "A Montagu's Harrier migration story",
+  title: "ATREE Storymap Harrier",
+  description: "A Montagu's Harrier story",
 };
 
 export default function RootLayout({
