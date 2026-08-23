@@ -465,10 +465,11 @@ export default function ScrollMap() {
               flexShrink: 0,
             }}>
                     <Image
+                    unoptimized
                       src={loc.img}
                       alt="Northern Harrier bird"
                       fill
-                      className="object-cover shadow-lg rounded-2xl"
+                      className={`object-cover shadow-lg rounded-2xl ${loc.img.length>2?"flex":"block"}`}
                     />
                     {/* <p className="absolute bottom-3 bg-black/45  right-3 z-10 text-xs  opacity-70 px-2 text-white">Pc: Illustrations of TG, Arjun( phd student), Prashanth (researcher) and Chian (Field researcher )</p> */}
                   </div>

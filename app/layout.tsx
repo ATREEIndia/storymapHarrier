@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bitter, Geist, Geist_Mono, Raleway } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -10,6 +10,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const bitter = Bitter({
+  variable: "--font-story-bitter",
+  subsets: ["latin"],
+});
+
+const raleway = Raleway({
+  variable: "--font-story-raleway",
   subsets: ["latin"],
 });
 
@@ -26,7 +36,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}${bitter.variable}
+        ${raleway.variable} h-full antialiased`}
     >
       <head>
         <link

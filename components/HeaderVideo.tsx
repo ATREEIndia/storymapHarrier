@@ -13,7 +13,7 @@ const HeaderVideo = () => {
         />
 
         {/* Content */}
-        <div className="relative flex z-20 h-full items-center justify-center select-none p-8">
+        <div className="relative flex z-20 h-full items-center mt-50 lg:mt-0 lg:px-55 justify-left select-none p-8">
           <div className="text-left text-white">
             <h1 className="text-6xl font-black leading-none">A Life</h1>
             <p className="mt-2  font-bold text-3xl">Without Boundaries</p>

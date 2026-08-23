@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,6 +12,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+    --font-bitter: var(--font-bitter);
+  --font-raleway: var(--font-raleway);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +26,18 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Bitter,Raleway, Arial, Helvetica, sans-serif;
+}
+p{
+  font-family: Bitter
+
+}
+
+.font-story-bitter{
+  font-family: Bitter
+}
+.font-story-raleway{
+  font-family: Raieway
 }
 
 *, *::before, *::after {

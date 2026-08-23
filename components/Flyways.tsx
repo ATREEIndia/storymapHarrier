@@ -36,8 +36,8 @@ const Flyways = () => {
   const currentImg = currentImgIndex !== null ? flyways[currentImgIndex].img : blankmap
 
   return (
-    <div className='w-full bg-white p-2'>
-         <p className='w-full  text-sm flex justify-center animate-bounce p-3'>Click to explore</p>
+    <div className='w-full bg-white p-2 mt-10'>
+         <p className='w-full  text-sm flex justify-center animate-bounce '>Click to explore</p>
 
       {/* Button row — horizontal scroll on mobile, wrap on desktop */}
       <div className='flex flex-row flex-wrap sm:flex-nowrap gap-2 mb-2 overflow-x-auto pb-1 justify-center'>
@@ -62,6 +62,7 @@ const Flyways = () => {
       {/* Map image */}
       <div className='relative w-full h-52 sm:h-72 md:h-[500px] lg:h-[650px] xl:h-[800px]'>
         <Image
+        unoptimized
           src={currentImg}
           fill
           className='object-contain'

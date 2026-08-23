@@ -166,6 +166,7 @@ export default function ArcGISMap({ onReady }: Props) {
         Map,
         SceneView,
         GraphicsLayer,
+        FeatureLayer,
         Graphic,
         Point,
         Polyline,
@@ -180,6 +181,7 @@ export default function ArcGISMap({ onReady }: Props) {
           "esri/Map",
           "esri/views/SceneView",
           "esri/layers/GraphicsLayer",
+          "esri/layers/FeatureLayer",
           "esri/Graphic",
           "esri/geometry/Point",
           "esri/geometry/Polyline",
@@ -195,6 +197,98 @@ export default function ArcGISMap({ onReady }: Props) {
       esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
 
       if (cancelled) return;
+
+      // Country boundaries layer
+      const boundaryLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer/0",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "simple-fill",
+            color: [0, 0, 0, 0],           // transparent fill
+            outline: {
+              color: [255, 165, 0, 1], // white border, 40% opacity
+              width: 1.0,
+            },
+          },
+        },
+        popupEnabled: false,
+      });
+      // Country highlight layer — specific countries in custom colors
+      const highlightLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer/0",
+        definitionExpression: "COUNTRY IN ('Pakistan', 'India', 'Afghanistan', 'Tajikistan', 'Kyrgyzstan', 'Kazakhstan', 'Uzbekistan')",
+
+        renderer: {
+          type: "unique-value",
+          field: "COUNTRY",
+          uniqueValueInfos: [
+            {
+              value: "Pakistan",
+              symbol: {
+                type: "simple-fill",
+                color: [255, 215, 0, 0.25],      // gold
+                outline: { color: [255, 215, 0, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "India",
+              symbol: {
+                type: "simple-fill",
+                color: [0, 180, 0, 0.25],        // green
+                outline: { color: [0, 200, 0, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "Afghanistan",
+              symbol: {
+                type: "simple-fill",
+                color: [255, 100, 0, 0.25],      // orange
+                outline: { color: [255, 120, 0, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "Tajikistan",
+              symbol: {
+                type: "simple-fill",
+                color: [0, 180, 255, 0.25],      // sky blue
+                outline: { color: [0, 200, 255, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "Kyrgyzstan",
+              symbol: {
+                type: "simple-fill",
+                color: [200, 0, 255, 0.25],      // purple
+                outline: { color: [220, 0, 255, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "Kazakhstan",
+              symbol: {
+                type: "simple-fill",
+                color: [0, 255, 180, 0.25],      // turquoise
+                outline: { color: [0, 255, 180, 0.9], width: 1.2 },
+              },
+            },
+            {
+              value: "Uzbekistan",
+              symbol: {
+                type: "simple-fill",
+                color: [255, 50, 100, 0.25],      // pink/rose
+                outline: { color: [255, 50, 100, 0.9], width: 1.2 },
+              },
+            },
+          ],
+        },
+        popupEnabled: false,
+      });
+
+      // above boundary layer, below trails
+
+
+      // Add boundary layer BELOW trail and marker layers
+      // 0 = bottom of layer stack
 
 
       // ── Map — pure satellite, no labels ──────────────────────────────────
@@ -213,18 +307,37 @@ export default function ArcGISMap({ onReady }: Props) {
       // ── SceneView — 3D with terrain ───────────────────────────────────────
       const first = locations[0];
 
+      // mapView = new SceneView({
+      //   container: mapRef.current,
+      //   map,
+      //   // Use center + zoom for initial position — more reliable than
+      //   // camera for centering at a specific coordinate
+      //   center: [first.lng, first.lat],
+      //   zoom: first.zoom,
+      //   ui: { components: [] },
+      //   environment: {
+      //     atmosphereEnabled: true,
+      //     starsEnabled: false,
+      //   },
+      // });
       mapView = new SceneView({
         container: mapRef.current,
         map,
-        // Use center + zoom for initial position — more reliable than
-        // camera for centering at a specific coordinate
-        center: [first.lng, first.lat],
-        zoom: first.zoom,
+        camera: {
+          position: {
+            latitude:  32.28153233704449, 
+            longitude: 76.13154293304282,
+            z: 5500000,
+          },
+          tilt: 0,
+          heading: 0,
+        },
         ui: { components: [] },
         environment: {
           atmosphereEnabled: true,
           starsEnabled: false,
         },
+        popup: { autoOpenEnabled: false },
       });
 
       await mapView.when();
@@ -292,6 +405,8 @@ export default function ArcGISMap({ onReady }: Props) {
       const trailLayer = new GraphicsLayer();
       const markerLayer = new GraphicsLayer();
       map.addMany([trailLayer, markerLayer]);
+      map.add(highlightLayer, 1);
+      map.add(boundaryLayer, 0);
 
       // ── Shared symbols ────────────────────────────────────────────────────
       const dotSymbol = new SimpleMarkerSymbol({
