@@ -8,6 +8,7 @@ import Flyways from '@/components/Flyways';
 import HeaderVideo from '@/components/HeaderVideo'
 import Highways_in_sky from '@/components/Highways_in_sky';
 import How_do_birds_migrate from '@/components/How_do_birds_migrate';
+import Magazine_img_tsx from '@/components/Magazine_img_txt';
 import Ptag from '@/components/Ptag'
 import ScrollMap from '@/components/ScrollMap'
 import ScrollSection from '@/components/ScrollSection';
@@ -34,6 +35,8 @@ const page = () => {
 
       <ScrollSection scroll_items={scroll_encounter} side='right' />
       <Flashback />
+
+
       <AddionalInfo
         content={<div className='flex flex-col gap-5'>
           <div>
@@ -66,8 +69,11 @@ const page = () => {
 
         </div>} />
 
-
       <How_do_birds_migrate />
+
+
+
+
 
       <div className={`${responsive} `}>
         <Title customClass='mt-10' mainTitle="Highways in the sky!" />
@@ -96,6 +102,7 @@ const page = () => {
 
       </div>
       <ScrollSection scroll_items={scroll_day_researcher} img_fill={true} />
+
       <div className='mt-10'>
         <Whats_on_menu />
       </div>

@@ -47,7 +47,7 @@ const Flyways = () => {
             key={fw.label}
             onClick={() => setCurrentImgIndex(currentImgIndex === i ? null : i)}
             className={`
-              flex-shrink-0 border-2 px-2 mt-5 py-1.5 text-xs sm:text-sm font-medium tracking-wide cursor-pointer transition-colors duration-200 rounded
+              flex-shrink-0 border-2 px-2 xl:mt-5 py-1.5 text-xs sm:text-sm font-medium tracking-wide cursor-pointer transition-colors duration-200 rounded
               ${currentImgIndex === i
                 ? `${fw.activeBg} text-white border-transparent`
                 : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
