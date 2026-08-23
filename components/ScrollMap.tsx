@@ -459,7 +459,7 @@ export default function ScrollMap() {
             <div style={{
               position: "relative",
               width: "100%",
-              height: isDesktop ? "200px" : "100px",
+              height: isDesktop ? "300px" : "200px",
               marginTop: "16px",
               marginBottom: "8px",
               flexShrink: 0,
@@ -490,7 +490,7 @@ export default function ScrollMap() {
         ))}
 
         {/* ── Outro ── */}
-        <div style={{
+        {/* <div style={{
           minHeight: isDesktop ? "60vh" : "40vh",
           display: "flex",
           flexDirection: "column",
@@ -513,9 +513,9 @@ export default function ScrollMap() {
             height: "1px",
             background: "rgba(139,69,19,0.42)",
             margin: "14px 0",
-          }} />
+          }} /> */}
 
-          <h2 style={{
+          {/* <h2 style={{
             margin: 0,
             fontFamily: "Georgia, serif",
             fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)",
@@ -536,8 +536,8 @@ export default function ScrollMap() {
             a route etched into him before he ever flew it alone. His journey, tracked one
             GPS ping at a time, shows how the grassland corridors of seven countries must
             stay intact for a single bird to keep finding his way home.
-          </p>
-        </div>
+          </p> */}
+        {/* </div> */}
       </div>
 
       {/* ══ RIGHT PANEL — map ═════════════════════════════════════════════ */}

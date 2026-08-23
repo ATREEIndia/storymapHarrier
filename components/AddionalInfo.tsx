@@ -8,7 +8,7 @@ type probs={
 const AddionalInfo = ({content}:probs) => {
     return (
         <div className={` h-full   ${responsive}`}>
-            <div className='border-l-5 w-full bg-orange-50 p-2 py-8 border-orange-800 text-gray-600 px-5 italic flex flex-col '>
+            <div className='border-l-5 w-full bg-orange-50 p-2 py-8 border-orange-800 text-gray-600 px-5 italic flex flex-col text-sm '>
                {content}
                 
 

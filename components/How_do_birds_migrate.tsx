@@ -8,7 +8,7 @@ const How_do_birds_migrate = () => {
   return (
     <Magazine_img_tsx
         img_right={false}
-        img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.png"
+        img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/harrier_flying_.png"
          content={
           <div>
             <Title

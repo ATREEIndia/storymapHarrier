@@ -91,7 +91,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
         {scroll_items.map((item, i) => (
           <div
             key={i}
-            className="scroll-text h-[100dvh] flex items-center "
+            className="scroll-text h-[100dvh] flex items-center  "
           >
             <div className='bg-[#f5f0e8] p-4 rounded-xl'>{item.content}</div>
           </div>
@@ -116,7 +116,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
               alt={item.alt || ''}
               fill
               src={item.img_src}
-              className="object-contain"
+              className={`${img_fill?"object-cover":""}object-contain`}
             />
           </div>
         ))}

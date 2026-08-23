@@ -127,7 +127,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         img_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/dinner.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/observing_harrier.jpg',
     },
     {
         content: (
@@ -138,7 +138,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         img_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/pre-roost.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/blue_grey_harrier.jpg',
     },
     {
         content: (
@@ -149,7 +149,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         img_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/dinner.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_observing.jpg',
     },
     {
         content: (
@@ -161,7 +161,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         img_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/measuring_wingspan_ring.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_gliding.jpg',
     },
     
 
