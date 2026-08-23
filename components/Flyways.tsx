@@ -8,16 +8,17 @@ import eastAsian_flyway from "@/public/eastasian_flyway.png"
 import american_flyway from "@/public/americas_flyway.png"
 
 const flyways = [
+   {
+    label: "CENTRAL ASIAN FLYWAY",
+    activeBg: "bg-red-800",
+    img: centralasian_flyway,
+  },
   {
     label: "AFRICAN-EURASIAN FLYWAY",
     activeBg: "bg-green-950",
     img: african_flyway,
   },
-  {
-    label: "CENTRAL ASIAN FLYWAY",
-    activeBg: "bg-red-800",
-    img: centralasian_flyway,
-  },
+ 
   {
     label: "EAST ASIAN-AUSTRALASIAN FLYWAY",
     activeBg: "bg-yellow-500",
@@ -65,6 +66,7 @@ const Flyways = () => {
         unoptimized
           src={currentImg}
           fill
+          loading="eager"
           className='object-contain'
           alt='flyway map'
         />
