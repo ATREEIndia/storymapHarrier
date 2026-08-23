@@ -5,13 +5,13 @@ export const responsive = "md:text-lg my-2 px-5 lg:px-10"
 export const scroll_encounter = [
     {
         content: (
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 pt-10 xl:p-0">
                 <Title
                     topTitle="The Encounter"
                     mainTitle="The day we found Gangai"
                 />
 
-                <p className="text-gray-800 text-lg">
+                <p className="text-gray-800 text-lg ">
                     We found Gangai on the day of a fire. He was a young
                     bird, perched on a post, in the grassland, calling out
                     to the other circling harriers. He tripped into our
@@ -20,7 +20,8 @@ export const scroll_encounter = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/forest_fire.jpg',
     },
     {
@@ -32,7 +33,8 @@ export const scroll_encounter = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/pre-roost.jpg',
     },
     {
@@ -43,7 +45,8 @@ export const scroll_encounter = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/Gangai.jpg',
     },
     {
@@ -54,7 +57,8 @@ export const scroll_encounter = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/measuring_wingspan_ring.jpg',
     },
     {
@@ -65,7 +69,8 @@ export const scroll_encounter = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/india_roost.jpg',
     },
     {
@@ -78,7 +83,8 @@ export const scroll_encounter = [
                 </span>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/survey_india.jpg',
     },
     {
@@ -90,7 +96,8 @@ export const scroll_encounter = [
                 </span>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
 
@@ -106,7 +113,8 @@ export const scroll_encounter = [
                 </span>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/ringing_bird.jpg',
     },
 
@@ -126,7 +134,8 @@ export const scroll_day_researcher = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/observing_harrier.jpg',
     },
     {
@@ -137,7 +146,8 @@ export const scroll_day_researcher = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/blue_grey_harrier.jpg',
     },
     {
@@ -148,8 +158,9 @@ export const scroll_day_researcher = [
                 </p>
             </div>
         ),
-        img_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_observing.jpg',
+        media_type:"video",
+        media_src:
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_observing.mp4',
     },
     {
         content: (
@@ -160,7 +171,8 @@ export const scroll_day_researcher = [
                 </p>
             </div>
         ),
-        img_src:
+        media_type:"image",
+        media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_gliding.jpg',
     },
     

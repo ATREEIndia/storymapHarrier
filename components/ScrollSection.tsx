@@ -9,15 +9,17 @@ gsap.registerPlugin(ScrollTrigger)
 
 export interface ScrollItem {
   content: ReactNode
-  img_src: string
+  media_src: string
   alt?: string
+  media_type:string
 
 }
 
 interface ScrollSectionProps {
   scroll_items: ScrollItem[]
   side?:string,
-  img_fill?:boolean
+  img_fill?:boolean,
+  
 }
 
 const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => {
@@ -93,7 +95,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
             key={i}
             className="scroll-text h-[100dvh] flex items-center  "
           >
-            <div className='bg-[#f5f0e8] p-4 rounded-xl'>{item.content}</div>
+            <div className='bg-[#f5f0e8] p-4 rounded-xl '>{item.content}</div>
           </div>
         ))}
       </div>
@@ -101,7 +103,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
       {/* Sticky Image Viewport */}
       <div
         ref={imageRef}
-        className={`${img_fill?"w-full":"xl:w-2/3"} w-full absolute  ${side=="right"?"xl:right-0":"xl:left-0"}  top-0 h-[100dvh] bg-white overflow-hidden`}
+        className={`${img_fill?"w-full":"xl:w-2/3"} w-full absolute z-11 xl:z-0  ${side=="right"?"xl:right-0":"xl:left-0"}  top-0 h-[30vh]  xl:h-[100dvh] bg-white overflow-hidden`}
       >
         {scroll_items.map((item, i) => (
           <div
@@ -115,9 +117,22 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
               unoptimized
               alt={item.alt || ''}
               fill
-              src={item.img_src}
-              className={`${img_fill?"object-cover":""}object-contain`}
+              loading="eager"
+              src={item.media_src}
+              className={`${img_fill?"object-cover":""}object-contain ${item.media_type==="image"?"flex":"hidden"}`}
             />
+
+            <video
+          className={`${img_fill?"object-cover":""}object-contain ${item.media_type==="video"?"flex":"hidden"}`}
+          src={item.media_src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          
+        />
+
+
           </div>
         ))}
       </div>
