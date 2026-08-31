@@ -123,7 +123,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
             />
 
             <video
-          className={`${img_fill?"object-cover":""}object-contain ${item.media_type==="video"?"flex":"hidden"}`}
+          className={` ${img_fill?"object-cover":""} object-contain ${item.media_type==="video"?"flex":"hidden"}`}
           src={item.media_src}
           autoPlay
           muted

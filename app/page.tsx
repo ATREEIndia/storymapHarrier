@@ -1,18 +1,21 @@
 'use client'
 import AddionalInfo from '@/components/AddionalInfo';
 import AnimatedStages from '@/components/AnimatedStages';
-import { responsive, scroll_day_researcher, scroll_encounter } from '@/components/Constants';
+import Cafe_in_Grassland from '@/components/Cafe_in_Grassland';
+import { finding_roost, responsive, scroll_day_researcher, scroll_encounter } from '@/components/Constants';
 import FeatureImage from '@/components/FeatureImage';
 import Flashback from '@/components/Flashback';
 import Flyways from '@/components/Flyways';
 import HeaderVideo from '@/components/HeaderVideo'
 import Highways_in_sky from '@/components/Highways_in_sky';
 import How_do_birds_migrate from '@/components/How_do_birds_migrate';
+import How_many_roost from '@/components/How_many_roost';
 import Magazine_img_tsx from '@/components/Magazine_img_txt';
 import Ptag from '@/components/Ptag'
 import ScrollMap from '@/components/ScrollMap'
 import ScrollSection from '@/components/ScrollSection';
 import Title from '@/components/Title';
+import What_does_it_tells from '@/components/What_does_it_tells';
 import Whats_on_menu from '@/components/Whats_on_menu';
 import Image from "next/image";
 import { useEffect, useRef, useState } from 'react';
@@ -106,6 +109,20 @@ const page = () => {
       <div className='mt-10'>
         <Whats_on_menu />
       </div>
+
+      <div className='mt-10'>
+        <Cafe_in_Grassland />
+      </div>
+
+      <div className='mt-10'>
+        <What_does_it_tells />
+      </div>
+
+      <div className='mt-10'>
+        <How_many_roost />
+      </div>
+
+      <ScrollSection side='right'  scroll_items={finding_roost} img_fill={false} />
 
 
 
