@@ -41,9 +41,10 @@ const page = () => {
 
 
       <AddionalInfo
+      title='Why do animals migrate?'
         content={<div className='flex flex-col gap-5'>
           <div>
-            <b>Why do animals migrate?</b><br></br>
+           
             Birds, mammals, insects, fishes and reptiles undertake seasonal movement or migration between breeding and non-breeding grounds in search of food.
           </div>
           <div>
@@ -93,9 +94,10 @@ const page = () => {
 
       <div className='py-20'>
         <AddionalInfo
+        title='A short history of bird migrations'
           content={<div className='flex flex-col gap-5'>
             <div>
-              <b>A short history of bird migrations</b><br></br>
+             
               The history of modern bird ringing began in the 1890s when a Danish man, Hans Christian Cornelius Mortensen, had the idea of fastening a ring with a number and address to a bird's leg. This was the first step towards understanding bird migrations. When the birds ringed in one part of the continent were picked up in another, we realised for the first time that birds fly long distances and overturn bizarre theories that swallows sank into the bottom of the lakes during winter. It also helped establish flyways, as paths used by migrating birds to traverse to their wintering grounds
 
             </div>
