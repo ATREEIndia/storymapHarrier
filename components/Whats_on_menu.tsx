@@ -48,6 +48,7 @@ import Magazine_img_tsx from './Magazine_img_txt'
 const Whats_on_menu = () => {
     return (
         <Magazine_img_tsx
+        is_center={true}
             img_right={false}
             img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/prey_species.png"
             content={
