@@ -219,7 +219,7 @@ export default function ArcGISMap({ onReady }: Props) {
         url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer/0",
         definitionExpression: "COUNTRY IN ('Pakistan', 'India', 'Afghanistan', 'Tajikistan', 'Kyrgyzstan', 'Kazakhstan', 'Uzbekistan')",
 
-        renderer: {
+         renderer: {
           type: "unique-value",
           field: "COUNTRY",
           uniqueValueInfos: [
@@ -405,8 +405,8 @@ export default function ArcGISMap({ onReady }: Props) {
       const trailLayer = new GraphicsLayer();
       const markerLayer = new GraphicsLayer();
       map.addMany([trailLayer, markerLayer]);
-      map.add(highlightLayer, 1);
-      map.add(boundaryLayer, 0);
+     // map.add(highlightLayer, 1);
+     // map.add(boundaryLayer, 0);
 
       // ── Shared symbols ────────────────────────────────────────────────────
       const dotSymbol = new SimpleMarkerSymbol({
