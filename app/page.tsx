@@ -6,10 +6,12 @@ import { finding_roost, responsive, scroll_day_researcher, scroll_encounter } fr
 import FeatureImage from '@/components/FeatureImage';
 import Flashback from '@/components/Flashback';
 import Flyways from '@/components/Flyways';
+import Grasslands_wasteland from '@/components/Grasslands_wasteland';
 import HeaderVideo from '@/components/HeaderVideo'
 import Highways_in_sky from '@/components/Highways_in_sky';
 import How_do_birds_migrate from '@/components/How_do_birds_migrate';
 import How_many_roost from '@/components/How_many_roost';
+import Its_time_to_go_back from '@/components/Its_time_to_go_back';
 import Magazine_img_tsx from '@/components/Magazine_img_txt';
 import Predator from '@/components/Predators';
 import Ptag from '@/components/Ptag'
@@ -40,21 +42,21 @@ const page = () => {
       <ScrollSection scroll_items={scroll_encounter} side='right' />
       <Flashback />
 
-       <div className={`${responsive}`}>
-            <Title
-                topTitle=""
-                mainTitle="Growth Stages"
-            />
-            </div>
+      <div className={`${responsive}`}>
+        <Title
+          topTitle=""
+          mainTitle="Growth Stages"
+        />
+      </div>
 
-       <AnimatedStages/>
+      <AnimatedStages />
 
 
       <AddionalInfo
-      title='Why do animals migrate?'
+        title='Why do animals migrate?'
         content={<div className='flex flex-col gap-5'>
           <div>
-           
+
             Birds, mammals, insects, fishes and reptiles undertake seasonal movement or migration between breeding and non-breeding grounds in search of food.
           </div>
           <div>
@@ -104,10 +106,10 @@ const page = () => {
 
       <div className='py-20'>
         <AddionalInfo
-        title='A short history of bird migrations'
+          title='A short history of bird migrations'
           content={<div className='flex flex-col gap-5'>
             <div>
-             
+
               The history of modern bird ringing began in the 1890s when a Danish man, Hans Christian Cornelius Mortensen, had the idea of fastening a ring with a number and address to a bird's leg. This was the first step towards understanding bird migrations. When the birds ringed in one part of the continent were picked up in another, we realised for the first time that birds fly long distances and overturn bizarre theories that swallows sank into the bottom of the lakes during winter. It also helped establish flyways, as paths used by migrating birds to traverse to their wintering grounds
 
             </div>
@@ -138,8 +140,16 @@ const page = () => {
         <Predator />
       </div>
 
-      <ScrollSection side='right'  scroll_items={finding_roost} img_fill={false} />
-     
+      <ScrollSection side='right' scroll_items={finding_roost} img_fill={false} />
+
+      <div className='mt-10'>
+        <Its_time_to_go_back />
+      </div>
+      
+      <div className='mt-10'>
+        <Grasslands_wasteland/>
+      </div>
+
 
 
 

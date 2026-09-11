@@ -221,7 +221,7 @@ export const finding_roost
             ),
             media_type: "image",
             media_src:
-                'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/research_Instruments.png',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/binocular.JPG',
         },
         {
             content: (
@@ -233,7 +233,7 @@ export const finding_roost
             ),
             media_type: "image",
             media_src:
-                'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/weighing_bird.jpg',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/harrier_on_net.JPG',
         },
         {
             content: (
