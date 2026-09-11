@@ -11,6 +11,7 @@ import Highways_in_sky from '@/components/Highways_in_sky';
 import How_do_birds_migrate from '@/components/How_do_birds_migrate';
 import How_many_roost from '@/components/How_many_roost';
 import Magazine_img_tsx from '@/components/Magazine_img_txt';
+import Predator from '@/components/Predators';
 import Ptag from '@/components/Ptag'
 import ScrollMap from '@/components/ScrollMap'
 import ScrollSection from '@/components/ScrollSection';
@@ -38,6 +39,15 @@ const page = () => {
 
       <ScrollSection scroll_items={scroll_encounter} side='right' />
       <Flashback />
+
+       <div className={`${responsive}`}>
+            <Title
+                topTitle=""
+                mainTitle="Growth Stages"
+            />
+            </div>
+
+       <AnimatedStages/>
 
 
       <AddionalInfo
@@ -124,7 +134,12 @@ const page = () => {
         <How_many_roost />
       </div>
 
+      <div className='mt-10'>
+        <Predator />
+      </div>
+
       <ScrollSection side='right'  scroll_items={finding_roost} img_fill={false} />
+     
 
 
 

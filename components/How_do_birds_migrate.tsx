@@ -7,6 +7,7 @@ import Magazine_img_tsx from './Magazine_img_txt'
 const How_do_birds_migrate = () => {
   return (
     <Magazine_img_tsx
+    is_center={true}
         img_right={false}
         img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/harrier_flying_.png"
          content={
