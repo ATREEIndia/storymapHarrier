@@ -15,6 +15,7 @@ import Its_time_to_go_back from '@/components/Its_time_to_go_back';
 import Magazine_img_tsx from '@/components/Magazine_img_txt';
 import Predator from '@/components/Predators';
 import Ptag from '@/components/Ptag'
+import Resources from '@/components/Resources';
 import ScrollMap from '@/components/ScrollMap'
 import ScrollSection from '@/components/ScrollSection';
 import Title from '@/components/Title';
@@ -145,9 +146,13 @@ const page = () => {
       <div className='mt-10'>
         <Its_time_to_go_back />
       </div>
-      
+
       <div className='mt-10'>
         <Grasslands_wasteland/>
+      </div>
+
+      <div className='mt-10'>
+        <Resources/>
       </div>
 
 
