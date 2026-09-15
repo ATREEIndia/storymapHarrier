@@ -5,9 +5,10 @@ import Image from 'next/image'
 
 const Cafe_in_Grassland = () => {
    return (
-        <Magazine_img_tsx
+    <div>
+ <Magazine_img_tsx
         is_center={true}
-            img_right={true}
+            img_right={false}
             img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/pre-roost.jpg"
             content={
                 <div>
@@ -18,7 +19,7 @@ const Cafe_in_Grassland = () => {
                         />
                          
                         <p className='mt-3'>
-                            Before settling down in their roost, we have observed harriers are found to congregate near bare patches nearby. This is akin to a cafe for men and women who gather for a quiet time before they retreat to their homes.<br /><br />
+                            After a day of flying and foraging, birds head to their roost, a chosen place to spend their night. For harriers, that place is the grasslands. Before settling down in their roost, we observed that harriers habitually congregated near bare patches close by. This is akin to a cafe for men and women who gather for a quiet time before they retreat to their homes. 
 
 
 
@@ -35,6 +36,37 @@ const Cafe_in_Grassland = () => {
 
                 </div>}
         />
+
+
+         <Magazine_img_tsx
+        is_center={true}
+            img_right={true}
+            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/pellects_collected.JPG"
+            content={
+                <div>
+                   
+                        
+                         
+                        <p className='mt-3'>
+                            These ‘cafes’ are the best locations to collect evidence of what harriers eat. Evidence that comes straight from their mouth. 
+
+
+
+                        </p>
+                       
+                        
+
+
+
+                       
+
+
+                  
+
+                </div>}
+        />
+    </div>
+       
         //     <div className={`w-full ${responsive} flex flex-col justify-center `}>
 
 

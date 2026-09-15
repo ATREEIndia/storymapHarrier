@@ -17,7 +17,10 @@ import Predator from '@/components/Predators';
 import Ptag from '@/components/Ptag'
 import Resources from '@/components/Resources';
 import ScrollMap from '@/components/ScrollMap'
+import ScrollMap2 from '@/components/ScrollMap2';
+import ScrollMap3 from '@/components/ScrollMap3';
 import ScrollSection from '@/components/ScrollSection';
+import ScrollSection2 from '@/components/ScrollSection2';
 import Title from '@/components/Title';
 import What_does_it_tells from '@/components/What_does_it_tells';
 import Whats_on_menu from '@/components/Whats_on_menu';
@@ -40,7 +43,7 @@ const page = () => {
 
       <HeaderVideo />
 
-      <ScrollSection scroll_items={scroll_encounter} side='right' />
+      <ScrollSection2 scroll_items={scroll_encounter} side='right' />
       <Flashback />
 
       <div className={`${responsive}`}>
@@ -103,7 +106,7 @@ const page = () => {
 
       </div>
       <Flyways />
-      <ScrollMap />
+      <ScrollMap3 />
 
       <div className='py-20'>
         <AddionalInfo
@@ -141,7 +144,7 @@ const page = () => {
         <Predator />
       </div>
 
-      <ScrollSection side='right' scroll_items={finding_roost} img_fill={false} />
+      <ScrollSection2 side='right' scroll_items={finding_roost} img_fill={false} />
 
       <div className='mt-10'>
         <Its_time_to_go_back />

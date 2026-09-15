@@ -19,7 +19,10 @@ const What_does_it_tells = () => {
                         <h1 className='font-semibold'>What does the cafe tell us about the harrier diet ? </h1>
 
                          <p className='mt-3'>
-                            The harriers, in the process of digesting their food, would regurgitate and throw away the bones, hairs and feathers in the form of pellets. The pellet contents open up a whole new world. Under a microscope, it is astonishing  to see the discarded remains, to see what species they belong to.<br/><br/> The guts of small birds which the harrier must have eaten reveal undigested grains. Some of the grains can be sown in pots to understand what the smaller birds have been eating.<br /><br />
+                           The harriers, in the process of digesting their food, regurgitate and throw away the bones, hairs and feathers in the form of pellets. We spent the evenings collecting these pellets as their contents could open up a whole new world. Under a microscope, it is astonishing  to see the discarded remains, to see what species they belong to. The guts of small birds which the harrier must have eaten reveal undigested grains. Some of the grains can be sown in pots to understand what the smaller birds have been eating. <br /><br />
+
+Harriers feed on birds and rodents that have eaten a variety of plants, and the undigested seeds come out through these pellets. To our surprise, these seeds, when replanted, germinated, revealing how harriers, though carnivorous, played an important role as secondary seed dispersers.
+
 
 
 

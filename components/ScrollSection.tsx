@@ -89,7 +89,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
   return (
     <div ref={containerRef} className={`w-full relative flex ${side==="right"?"":"flex-row-reverse"}`}>
       {/* Scrollable Text Area */}
-      <div className="xl:w-1/3 px-5 z-10">
+      <div className="md:w-1/3 px-5 z-10">
         {scroll_items.map((item, i) => (
           <div
             key={i}
@@ -103,7 +103,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
       {/* Sticky Image Viewport */}
       <div
         ref={imageRef}
-        className={`${img_fill?"w-full":"xl:w-2/3"} w-full absolute z-11 xl:z-0  ${side=="right"?"xl:right-0":"xl:left-0"}  top-0 h-[30vh]  xl:h-[100dvh] bg-white overflow-hidden`}
+        className={`${img_fill?"w-full":"md:w-2/3"} w-full absolute z-11 xl:z-0  ${side=="right"?"md:right-0":"md:left-0"}  top-0 h-[30vh]  md:h-[100dvh] bg-white overflow-hidden`}
       >
         {scroll_items.map((item, i) => (
           <div

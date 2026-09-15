@@ -33,7 +33,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/pre-roost.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/forest_fire.jpg',
     },
     {
         content: (
@@ -73,7 +73,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/map_filed_guide.png',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_flying.jpg',
     },
     {
         content: (
@@ -88,7 +88,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/decline_graph.png',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/people_in_filed.JPG',
     },
     {
         content: (
@@ -107,22 +107,22 @@ export const scroll_encounter = [
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
 
-    {
-        content: (
-            <div className="flex flex-col gap-5">
-                <span className="text-gray-800 text-lg">
-                    None of them had tagged a bird before. <br /><br />
-                    Raymond Klaassen and Ben Koks from the Dutch Montague Harrier foundation came to help.<br /><br />
-                    And so began the long work of tracking Gangai.
+    // {
+    //     content: (
+    //         <div className="flex flex-col gap-5">
+    //             <span className="text-gray-800 text-lg">
+    //                 None of them had tagged a bird before. <br /><br />
+    //                 Raymond Klaassen and Ben Koks from the Dutch Montague Harrier foundation came to help.<br /><br />
+    //                 And so began the long work of tracking Gangai.
 
 
-                </span>
-            </div>
-        ),
-        media_type: "image",
-        media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/raymond.jpg',
-    },
+    //             </span>
+    //         </div>
+    //     ),
+    //     media_type: "image",
+    //     media_src:
+    //         'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/raymond.jpg',
+    // },
 
 ]
 
@@ -154,7 +154,7 @@ export const scroll_day_researcher = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/blue_grey_harrier.jpg',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/gliding_harrier2.jpg',
     },
     {
         content: (
@@ -166,44 +166,57 @@ export const scroll_day_researcher = [
         ),
         media_type: "video",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_observing.mp4',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_on_pole.mp4',
     },
+    // {
+    //     content: (
+    //         <div className="flex flex-col gap-5">
+    //             <p className="text-gray-800 text-lg">
+    //                 Collecting Pellets...
+    //             </p>
+    //         </div>
+    //     ),
+    //     media_type: "image",
+    //     media_src:
+    //         'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/collecting_pellets.jpg',
+    // },
+    // {
+    //     content: (
+    //         <div className="flex flex-col gap-5">
+    //             <p className="text-gray-800 text-lg">
+    //                 instruments...
+    //             </p>
+    //         </div>
+    //     ),
+    //     media_type: "image",
+    //     media_src:
+    //         'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/research_Instruments.jpg',
+    // },
     {
         content: (
             <div className="flex flex-col gap-5">
                 <p className="text-gray-800 text-lg">
-                    Collecting Pellets...
-                </p>
-            </div>
-        ),
-        media_type: "image",
-        media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/collecting_pellets.jpg',
-    },
-    {
-        content: (
-            <div className="flex flex-col gap-5">
-                <p className="text-gray-800 text-lg">
-                    instruments...
-                </p>
-            </div>
-        ),
-        media_type: "image",
-        media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/research_Instruments.jpg',
-    },
-    {
-        content: (
-            <div className="flex flex-col gap-5">
-                <p className="text-gray-800 text-lg">
-                    It swooped down swiftly, gliding over the grass blades, before returning to its perch. Harriers after pouncing upon prey will fly to a suitable spot to dissect and consume the prey. Quite often in the case of grasshoppers, they fly to bare patches to probably ensure the insect does not wriggle away into tall grass.
+                    It swooped down swiftly, gliding over the grass blades, before returning to its perch. Harriers after pouncing upon prey will fly to a suitable spot to dissect and consume the prey.
 
                 </p>
             </div>
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_gliding.jpg',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/hunting_grasshopper.JPG',
+    },
+    {
+        content: (
+            <div className="flex flex-col gap-5">
+                <p className="text-gray-800 text-lg">
+                    Quite often in the case of grasshoppers, they fly to bare patches to probably ensure the insect does not wriggle away into tall grass.
+
+                </p>
+            </div>
+        ),
+        media_type: "image",
+        media_src:
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/flying-with-grasshopper.jpg',
     },
 
 
