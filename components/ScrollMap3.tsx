@@ -457,7 +457,7 @@ export default function ScrollMap() {
               }}
             >
               {/* Index counter */}
-              <p style={{
+              {/* <p style={{
                 margin: 0,
                 fontSize: "10px",
                 letterSpacing: "0.42em",
@@ -465,7 +465,7 @@ export default function ScrollMap() {
                 color: "rgba(139,69,19,0.62)",
               }}>
                 {String(i + 1).padStart(2, "0")} &nbsp;/&nbsp; {String(locations.length).padStart(2, "0")}
-              </p>
+              </p> */}
 
               {/* Divider line */}
               <div style={{
@@ -488,15 +488,20 @@ export default function ScrollMap() {
               </h2>
 
               {/* Subtitle */}
-              <p style={{
-                margin: "6px 0 0",
-                fontSize: "11px",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "rgba(0,0,0,0.40)",
-              }}>
+              <div className="w-full flex  ">
+                <Image
+                unoptimized
+                alt=""
+                src={loc.subtitle}
+                width={100}
+                height={100}
+                className="object-contain "
+                />
+                {/* <p className="bg-orange-500 p-2 text-white font-bold rounded-2xl">
                 {loc.subtitle}
-              </p>
+              </p> */}
+              </div>
+              
 
               {/* Description */}
               <p style={{

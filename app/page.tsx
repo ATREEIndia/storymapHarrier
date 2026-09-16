@@ -4,6 +4,7 @@ import AnimatedStages from '@/components/AnimatedStages';
 import Cafe_in_Grassland from '@/components/Cafe_in_Grassland';
 import { finding_roost, responsive, scroll_day_researcher, scroll_encounter } from '@/components/Constants';
 import FeatureImage from '@/components/FeatureImage';
+
 import Flashback from '@/components/Flashback';
 import Flyways from '@/components/Flyways';
 import Grasslands_wasteland from '@/components/Grasslands_wasteland';
@@ -27,23 +28,33 @@ import Whats_on_menu from '@/components/Whats_on_menu';
 import Image from "next/image";
 import { useEffect, useRef, useState } from 'react';
 
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 const page = () => {
 
-  const containerRef = useRef(null)
+
+  const containerRef_roost = useRef<HTMLDivElement>(null)
+  const containerRef_intro = useRef<HTMLDivElement>(null)
+  const containerRef_day_researcher = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Refresh ScrollTrigger after full page layout stabilizes
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 500)
 
-
-
-
+    return () => clearTimeout(timer)
   }, [])
-
   return (
     <main className='w-full flex flex-col bg-[#f5f0e8]'>
 
       <HeaderVideo />
+      {/* <Encounter/> */}
 
-      <ScrollSection2 scroll_items={scroll_encounter} side='right' />
+      <ScrollSection scroll_items={scroll_encounter} side='right' />
       <Flashback />
 
       <div className={`${responsive}`}>
@@ -95,17 +106,17 @@ const page = () => {
 
 
 
-      <div className={`${responsive} `}>
+      <div className={`${responsive} bg-white `}>
         <Title customClass='mt-10' mainTitle="Highways in the sky!" />
 
 
         <p className='mt-10'>
           Invisible to the human eye, a few 1000 feet above the land and oceans of the world lie some of the planet’s busiest highways or flyways. Twice a year, these connecting corridors hum to the endless beats of millions of wings as birds commute between their seasonal homes.<br /><br />
         </p>
-
+        <Flyways />
 
       </div>
-      <Flyways />
+
       <ScrollMap3 />
 
       <div className='py-20'>
@@ -122,6 +133,7 @@ const page = () => {
           </div>} />
 
       </div>
+
       <ScrollSection scroll_items={scroll_day_researcher} img_fill={true} />
 
       <div className='mt-10'>
@@ -144,18 +156,20 @@ const page = () => {
         <Predator />
       </div>
 
-      <ScrollSection2 side='right' scroll_items={finding_roost} img_fill={false} />
+
+
+      <ScrollSection side='right' scroll_items={finding_roost} img_fill={false} />
 
       <div className='mt-10'>
         <Its_time_to_go_back />
       </div>
 
       <div className='mt-10'>
-        <Grasslands_wasteland/>
+        <Grasslands_wasteland />
       </div>
 
       <div className='mt-10'>
-        <Resources/>
+        <Resources />
       </div>
 
 

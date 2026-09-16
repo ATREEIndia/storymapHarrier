@@ -469,13 +469,7 @@ export default function ScrollMap() {
               </h2>
 
               {/* Subtitle */}
-              <p style={{
-                margin: "6px 0 0",
-                fontSize: "11px",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "rgba(0,0,0,0.40)",
-              }}>
+              <p className="text-xl">
                 {loc.subtitle}
               </p>
 

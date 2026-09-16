@@ -89,6 +89,8 @@ const ScrollSection2 = ({ scroll_items, side = 'left', img_fill = false }: Scrol
     const panels = q('.story-image')
     if (!panels.length) return
 
+    
+
     gsap.to(panels, { opacity: 0, duration: 0.8, ease: 'power2.inOut' })
     gsap.to(panels[currentIndex], { opacity: 1, duration: 1.2, ease: 'power2.inOut' })
 
@@ -128,7 +130,7 @@ const ScrollSection2 = ({ scroll_items, side = 'left', img_fill = false }: Scrol
           <div
             key={i}
             className="story-image absolute inset-0"
-            style={{ opacity: i === 0 ? 1 : 0 }}
+            style={{ opacity: i === 0  ? 1 : 0 }}
           >
             {item.media_type === 'image' ? (
               <Image

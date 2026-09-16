@@ -15,11 +15,12 @@ export const scroll_encounter = [
                     We found Gangai on the day of a fire. He was a young bird, perched on a post, in the grazing lands, calling out to the other circling harriers. He tripped into our mist net around the time when a fire set by the fireline workers went momentarily out of control.
 
                 </p>
+               
             </div>
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/forest_fire.jpg',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/forest_fire.jpg',
     },
     {
         content: (
@@ -33,7 +34,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/forest_fire.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/forest_fire.jpg',
     },
     {
         content: (
@@ -46,7 +47,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/Gangai.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/Gangai.jpg',
     },
     {
         content: (
@@ -58,7 +59,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/measuring_wingspan_ring.jpg',
+            'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/measuring_wingspan_ring.jpg',
     },
     {
         content: (
@@ -73,7 +74,7 @@ export const scroll_encounter = [
         ),
         media_type: "image",
         media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_flying.jpg',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/bird_flying.jpg',
     },
     {
         content: (
