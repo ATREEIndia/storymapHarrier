@@ -166,14 +166,14 @@
 //   scroll_items: ScrollItem[]
 //   side?:string,
 //   img_fill?:boolean,
-   
+
 
 // }
 
 
 
 // const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => {
-  
+
 //   const containerRef_roost = useRef<HTMLDivElement>(null)
 //   const imageRef_roost = useRef<HTMLDivElement>(null)
 //   const [currentIndex, setCurrentImgIndex] = useState(0)
@@ -469,7 +469,8 @@ export interface ScrollItem {
   content: ReactNode
   media_src: string
   alt?: string
-  media_type: string
+  media_type: string,
+  caption:string
 }
 
 interface ScrollSectionProps {
@@ -539,13 +540,12 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
     >
       {/* 1. Background Sticky Media Viewport */}
       <div
-        className={`sticky top-0 h-[100dvh] overflow-hidden  ${
-          img_fill
-            ? 'w-full z-0'
-            : side === 'right'
+        className={`sticky top-0 h-[100dvh] overflow-hidden  ${img_fill
+          ? 'w-full z-0'
+          : side === 'right'
             ? 'w-full md:w-2/3 md:ml-auto z-0'
             : 'w-full md:w-2/3 md:mr-auto z-0'
-        }`}
+          }`}
       >
         <div className="relative w-full h-full bg-white   ">
           {scroll_items.map((item, i) => (
@@ -556,18 +556,64 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
                 opacity: i === 0 ? 1 : 0,
               }}
             >
+
               {item.media_type === 'image' && (
-                <Image
-                  unoptimized
-                  alt={item.alt || 'story image'}
-                  fill
-                  priority={i === 0}
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  src={item.media_src}
-                  onLoad={() => ScrollTrigger.refresh()}
-                  className={` ${img_fill ? 'object-cover' : 'object-contain object-top  md:object-center '}`}
-                />
+                <div className="w-full h-full relative flex md:items-center items-start justify-center">
+                  {img_fill ? (
+                    // Full-bleed mode: image genuinely fills the box, so bottom-0 caption is safe
+                    <>
+                      <Image
+                        unoptimized
+                        alt={item.alt || 'story image'}
+                        fill
+                        priority={i === 0}
+                        loading={i === 0 ? 'eager' : 'lazy'}
+                        src={item.media_src}
+                        onLoad={() => ScrollTrigger.refresh()}
+                        className="object-cover"
+                      />
+                      <p className="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent">
+                        {item.caption??""}
+                      </p>
+                    </>
+                  ) : (
+                    // Contain mode: image may not fill the box, so caption must follow the real image, not the container
+                    <div className="relative max-w-full max-h-full">
+                      <img
+                        alt={item.alt || 'story image'}
+                        src={item.media_src}
+                        className="block max-w-full max-h-full w-auto h-auto object-contain object-top md:object-center "
+                      />
+                      <p className={`${item.caption?"":"hidden"} absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent`}>
+                       {item.caption??""}
+                      </p>
+                    </div>
+                  )}
+                </div>
               )}
+
+
+              {/* {item.media_type === 'image' && (
+                <div className='w-full h-full relative flex flex-col'>
+                  <Image
+                    unoptimized
+                    alt={item.alt || 'story image'}
+                    fill
+                    priority={i === 0}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    src={item.media_src}
+                    onLoad={() => ScrollTrigger.refresh()}
+                    className={`${img_fill ? 'object-cover' : 'object-contain object-top md:object-center'}`}
+                  />
+
+                  
+                  <p className="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent">
+                    caption
+                  </p>
+                </div>
+              )
+              
+              } */}
 
               {item.media_type === 'video' && (
                 <video
@@ -577,21 +623,27 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
                   loop
                   playsInline
                   onLoadedData={() => ScrollTrigger.refresh()}
-                  className={`w-full h-full ${
-                    img_fill ? 'object-cover' : 'object-contain'
-                  }`}
+                  className={`w-full h-full ${img_fill ? 'object-cover' : 'object-contain'
+                    }`}
                 />
               )}
+
+
+
+
+
+
+
             </div>
           ))}
         </div>
+
       </div>
 
       {/* 2. Scrollable Text Overlay Track */}
       <div
-        className={`relative  -mt-[100dvh] w-full flex ${
-          side === 'right' ? 'justify-start' : 'justify-end'
-        }`}
+        className={`relative  -mt-[100dvh] w-full flex ${side === 'right' ? 'justify-start' : 'justify-end'
+          }`}
       >
         <div className="w-full md:w-1/3 px-5">
           {scroll_items.map((item, i) => (

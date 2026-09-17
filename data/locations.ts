@@ -290,7 +290,7 @@ export const locations: StoryLocation[] = [
     title:       "Lake Balkash, Kazakhstan ",
     subtitle:    "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Days/day1.png",
     description: "Gangai was born in the open meadows north-east of Lake Balkash, where his parents hunted voles and passed prey to one another in mid-air. As summer ended, his instinct to migrate emerged, and at only five months old he began his first journey south.",
-    img:"https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/arcgis/Lakebalkhashbasinmap.png",
+    img:"https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/arcgis/Lake-Balkash.jpg",
     lat:         48.1085,
     lng:         80.9165,
     zoom:        10,

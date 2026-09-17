@@ -495,7 +495,7 @@ export default function ScrollMap() {
                 src={loc.subtitle}
                 width={100}
                 height={100}
-                className="object-contain "
+                className="object-contain  "
                 />
                 {/* <p className="bg-orange-500 p-2 text-white font-bold rounded-2xl">
                 {loc.subtitle}

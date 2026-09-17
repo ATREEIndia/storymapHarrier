@@ -19,8 +19,11 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+        caption:"",
+
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/forest_fire.jpg',
+            
     },
     {
         content: (
@@ -33,6 +36,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+        caption:"",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/forest_fire.jpg',
     },
@@ -46,6 +50,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+         caption:"",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/Gangai.jpg',
     },
@@ -58,6 +63,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+         caption:"",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/measuring_wingspan_ring.jpg',
     },
@@ -73,6 +79,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/bird_flying.jpg',
     },
@@ -88,6 +95,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/people_in_filed.JPG',
     },
@@ -104,6 +112,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
@@ -142,6 +151,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/observing_harrier.jpg',
     },
@@ -154,6 +164,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/gliding_harrier2.jpg',
     },
@@ -166,6 +177,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "video",
+          caption:"",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_on_pole.mp4',
     },
@@ -203,6 +215,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
+          caption:"caption",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/hunting_grasshopper.JPG',
     },
@@ -216,6 +229,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
+          caption:"",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/flying-with-grasshopper.jpg',
     },
@@ -240,8 +254,9 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/binocular.JPG',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/binocular.jpg',
         },
         {
             content: (
@@ -252,8 +267,9 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"will be replaced",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/harrier_on_net.JPG',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/bird_into_net.jpg',
         },
         {
             content: (
@@ -264,6 +280,7 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"will be replaced ",
             media_src:
                 'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/blue_grey_harrier.jpg',
         },
@@ -278,8 +295,174 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"",
             media_src:
                 'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/all_trails.png',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Dewani</b><br></br>
+                        A female Montagu’s Harrier tracked via a GSM logger. As a juvenile in 2020, she made the single longest recorded stopover in the study, spending 48 days in the Thar Desert.
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/dewani.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Gange</b><br></br>
+                       A male tagged as a juvenile with a PTT device was the most consistently tracked bird in the dataset, providing autumn migration tracks across six consecutive years (2017–2022) and recording an exceptionally large stopover home range of 637.52 km² in 2022.
+
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/gange.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Hira</b><br></br>
+                        A female harrier tagged with a GSM logger. Tracked as both a juvenile (2021) and an adult (2022), she recorded the highest number of location fixes in a single stopover season, with 3,526 fixes over a 31-day stay in 2022.
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/hira.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Mothiya</b><br></br>
+                        A female harrier tracked via a GSM transmitter across two autumn seasons (2021 as a juvenile and 2022 as an adult). She exhibited remarkably consistent stopover durations, staying for 18 days in 2021 and 16 days in 2022.
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/mothiya.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Nellai</b><br></br>
+                         An adult male fitted with a PTT logger was tracked across five autumn migrations from 2018 to 2022, maintaining a relatively large home range of up to 363.69 km² during his 2018 stopover.
+
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/nellai.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Paruthi</b><br></br>
+                        An adult male tracked via a PTT device across three consecutive years (2017–2019). He was a brief visitor to the Thar Desert, recording stopover durations as short as just one day in both 2017 and 2019
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/paruthi.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Poorni</b><br></br>
+                        An adult female tagged with a GSM logger. She was one of only two tagged harriers in the study to return to the specific capture and release site at Tal Chhapar Wildlife Sanctuary in a subsequent year (2022).
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/poorni.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Deo </b><br></br>
+                        An adult male fitted with a PTT transmitter was tracked during the 2018 autumn migration. He recorded a 10-day stopover in the Thar Desert, covering a compact home range of 35.11 km².
+
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/deo.jpg',
+        },
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <p className="text-gray-800 text-lg">
+                        <b>Rupeli </b><br></br>
+                        An adult female tagged with a PTT device. Along with Poorni, she was the only other tracked bird to show site fidelity by returning to the Tal Chhapar sanctuary in a subsequent year (2019)
+                       
+
+                    </p>
+                     <img
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg"/>
+                </div>
+            ),
+            media_type: "image",
+              caption:"",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/tracks/rupeli.jpg',
         },
         {
             content: (
@@ -304,8 +487,9 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/stopover.jpg',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/stopover.jpg',
         },
        
         {
@@ -328,8 +512,9 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
+              caption:"",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/tracks.png',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/detour.jpg',
         },
         // {
         //     content: (

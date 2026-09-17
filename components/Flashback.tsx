@@ -36,7 +36,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={false}
             is_center={true}
-            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/food_pass2.jpeg"
+            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/food_pass.jpeg"
             content={
                 <div>
                   
@@ -58,7 +58,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={true}
             is_center={true}
-            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_stiing.jpg"
+            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_kazakisthan.jpg"
             content={
                 <div>
                   
