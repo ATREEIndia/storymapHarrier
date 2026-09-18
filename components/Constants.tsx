@@ -100,7 +100,7 @@ export const scroll_encounter = [
         media_type: "image",
         caption: "",
         media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/people_in_filed.JPG',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/people_in_filed2.JPG',
     },
     {
         content: (
