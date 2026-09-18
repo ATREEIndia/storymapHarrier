@@ -9,6 +9,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={true}
             is_center={true}
+            caption="Montagu’s harriers are ground-nesting birds, building their nests in open areas, amid tall grassy vegetation"
             img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.png"
             content={
                 <div>
@@ -68,7 +69,6 @@ const Flashback = () => {
                        
 
                         Soon the adults left on their migration and Gangai learnt to feed himself . By winter, as the days became shorter, an inherent migratory instinct kicked in and Gangai started on his first migratory flight. A distance of 5000 km over 22 days,  from Kazakhstan to India.  He was just over five months old.
-
 
 
 

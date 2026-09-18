@@ -23,7 +23,7 @@ const Magazine_img_tsx = ({ img_src, video_src, content, img_right, custom_class
             <div className={`w-full h-full flex items-center justify-center gap-5 flex-col md:flex-row ${img_right?"":"md:flex-row-reverse"}`}>
                 <div className={`w-9/10 `}>{content}</div>
 
-                <div className='w-full aspect-video flex flex-col gap-2'>
+                <div className='w-full aspect-video flex flex-col gap-2 items-center'>
                     <div className='w-full h-full relative flex flex-col'>
                         {img_src && (
                             <Image
@@ -48,7 +48,7 @@ const Magazine_img_tsx = ({ img_src, video_src, content, img_right, custom_class
 
                         
                     </div>
-                    <span className='text-center text-sm '><i>{caption}</i></span>
+                    <span className='text-center text-xs md:w-1/2  '><i className='md:px-0 '>{caption}</i></span>
                 </div>
             </div>
 

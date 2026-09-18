@@ -7,54 +7,83 @@ const What_does_it_tells = () => {
     return (
         <div>
 
-       
-        <Magazine_img_tsx
-            is_center={true}
-            img_right={false}
-            img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/microscope.png"
-            content={
-                <div>
+
+            <Magazine_img_tsx
+                is_center={true}
+                img_right={false}
+                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/collecting_pellets.png"
+                content={
+                    <div>
 
 
 
 
 
-                    <h1 className='font-semibold'>What does the cafe tell us about the harrier diet? </h1>
+                        <h1 className='font-semibold'>What does the cafe tell us about the harrier diet? </h1>
 
-                    <p className='mt-3'>
-                        The harriers, in the process of digesting their food, regurgitate and throw away the bones, hairs and feathers in the form of pellets. We spent the evenings collecting these pellets as their contents could open up a whole new world. Under a microscope, it is astonishing  to see the discarded remains, to see what species they belong to. The guts of small birds which the harrier must have eaten reveal undigested grains. Some of the grains can be sown in pots to understand what the smaller birds have been eating. <br /><br />
+                        <p className='mt-3'>
+                            The harriers, in the process of digesting their food, regurgitate and throw away the bones, hairs and feathers in the form of pellets. We spent the evenings collecting these pellets as their contents could open up a whole new world.  <br /><br />
 
+
+                        </p>
+
+
+
+
+                    </div>}
+            />
+            <Magazine_img_tsx
+                is_center={true}
+                img_right={true}
+                caption='Illustration of researcher looking at pellets under microscope- investigation'
+                img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/microscope.png"
+                content={
+                    <div>
+
+
+                        <p className='mt-3'>
+
+
+                            Under a microscope, it is astonishing  to see the discarded remains, to see what species they belong to. The guts of small birds which the harrier must have eaten reveal undigested grains. Some of the grains can be sown in pots to understand what the smaller birds have been eating.
+
+
+
+
+                        </p>
+
+
+
+
+                    </div>}
+            />
+            <Magazine_img_tsx
+                is_center={true}
+                img_right={false}
+                caption='Achyranthes aspera, Cleome chelidoni, Cleome viscosa, Comunelina erecta, Commelina diffusa, Cyanotis axillaris, Diplocyclos palmarus, Bolboschocous maritimus, Microsachys chamaclea, Croton bonplaodianus, Crotalaria pallida, Chamaecrista nictitans, Leucas aspera, Sida acuta, Boerhavia diffusa, Phyllanthus amarus, Sorghum halepense, Chionachne semiteres, Oryza sativa, Sorghum bicolor, Triticum aestivum, Cymbopogon martini, Hackelochloa grmularis, Dactyloctenium aegyptium'
+                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/seeds.png"
+                content={
+                    <div>
+
+
+                        <p className='mt-3'>
+
+
+                            Harriers feed on birds and rodents that have eaten a variety of plants, and the undigested seeds come out through these pellets. To our surprise, these seeds, when replanted, germinated, revealing how harriers, though carnivorous, played an important role as secondary seed dispersers. 
+
+
+
+
+                        </p>
+                        <span className='text-sm '>
+                            Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline' href="https://nsojournals.onlinelibrary.wiley.com/doi/10.1002/oik.11374">Secondary seed dispersal by migrant harriers in India</a>
+                        </span>
                         
-                    </p>
 
 
 
 
-                </div>}
-        />
-        <Magazine_img_tsx
-            is_center={true}
-            img_right={true}
-            img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/seeds.png"
-            content={
-                <div>
-
-
-                    <p className='mt-3'>
-                        
-
-                        Harriers feed on birds and rodents that have eaten a variety of plants, and the undigested seeds come out through these pellets. To our surprise, these seeds, when replanted, germinated, revealing how harriers, though carnivorous, played an important role as secondary seed dispersers.
-
-
-
-
-                    </p>
-
-
-
-
-                </div>}
-        />
+                    </div>}
+            />
         </div>
         //     <div className={`w-full ${responsive} flex flex-col justify-center `}>
 

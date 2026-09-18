@@ -516,14 +516,14 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
 
       gsap.to(images, {
         opacity: 0,
-        duration: 0.6,
-        ease: 'power2.inOut',
+         duration: 0,
+        // ease: 'power2.inOut',
       })
 
       gsap.to(images[currentIndex], {
         opacity: 1,
-        duration: 0.8,
-        ease: 'power2.inOut',
+         duration: 0,
+        // ease: 'power2.inOut',
       })
     },
     { scope: containerRef_roost, dependencies: [currentIndex, scroll_items] }
@@ -572,9 +572,9 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
                         onLoad={() => ScrollTrigger.refresh()}
                         className="object-cover"
                       />
-                      <p className="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent">
+                      <i className="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent">
                         {item.caption??""}
-                      </p>
+                      </i>
                     </>
                   ) : (
                     // Contain mode: image may not fill the box, so caption must follow the real image, not the container
@@ -584,9 +584,9 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
                         src={item.media_src}
                         className="block max-w-full max-h-full w-auto h-auto object-contain object-top md:object-center "
                       />
-                      <p className={`${item.caption?"":"hidden"} absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent`}>
+                      <i className={`${item.caption?"":"hidden"} absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent`}>
                        {item.caption??""}
-                      </p>
+                      </i>
                     </div>
                   )}
                 </div>

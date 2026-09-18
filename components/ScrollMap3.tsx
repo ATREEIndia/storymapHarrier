@@ -415,7 +415,7 @@ export default function ScrollMap() {
               lineHeight: 1.55,
               color: "rgba(0,0,0,0.52)",
             }}>
-              Gangai will fly along the Central Asian Flyway to reach India. Perhaps since the ice ages,  the harriers have been following the same route and this has got hard wired into their brain. When on such long distance migrations, Gangai has to occasionally stop to refuel for a couple of days.
+              Gangai flew along the Central Asian Flyway to reach India. Perhaps since the ice ages, the harriers have been following the same route and this has got hard wired into their brain. When on such long-distance migrations, they have to occasionally stop for a few days to refuel.
             </p>
             <p style={{
               marginTop: "30px",

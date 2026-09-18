@@ -60,7 +60,7 @@ const Whats_on_menu = () => {
                             mainTitle="What’s on the menu?"
                         />
                         <p className='mt-3'>
-                            The harriers enjoy a high-keto diet ! Their keen sight and auditory abilities help them spot a grasshopper, a basking lizard (calotes), a skink, dragonflies, praying mantis, antlion, or a Sitana (fan-throated lizard). By evening they might grab a gerbil, a field mouse or an occasional bird (short-toed lark).
+                            Harriers enjoy a high-keto diet ! Their keen sight and hearing help them spot a grasshopper, a basking lizard (calotes), a skink, dragonflies, praying mantis, antlion or a Sitana (fan-throated lizard). By evening they might grab a gerbil, a field mouse or an occasional bird like the Short-toed lark.
 
         
 
@@ -82,7 +82,7 @@ const Whats_on_menu = () => {
                         <p className='mt-3'>
                           
 
-                            As we were spending the whole day in the grassland, we were indebted to Bharath and Pappu, who ferried food to us from the city 20 kms away .
+                            We watched them, spending several hours of the day in the grasslands, with nothing but water and our backpack full of tools. We did not have to worry about food though, thanks to our local well-wishers Bharath and Pappu who ferried it for us from the city 20 kms away. 
 
                         </p>
                   

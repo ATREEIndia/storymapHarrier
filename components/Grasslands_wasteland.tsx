@@ -19,9 +19,10 @@ const Grasslands_wasteland = () => {
 
 
                         <p className="mt-5">
-                            Unfortunately, the grasslands, which are its roosting sites, are referred to as wastelands in India and are fast disappearing. Most of the wintering sites, Tal chappar, Desert National Park, the savannah grasslands all feature in the wasteland atlas of India. This means that these precious biomes will be  transformed for development, farming, military, afforestation, renewable energy and other purposes. Less than one percent come under the protected areas network.<br></br><br></br>
+                            In India, the grasslands are referred to as wastelands and are fast disappearing. Historically, the British valued forests and considered grassland ecosystems as unproductive. This legacy, unfortunately, has lived on. <br/><br/>
+ 
+Most of the wintering sites of Montague’s Harriers, Tal chappar, Desert National Park, the savannah grasslands all feature in the wasteland atlas of India. This means that these precious biomes will be  transformed for development, farming, military, afforestation, renewable energy and other purposes. Less than one percent come under the protected areas network. 
 
-                            Our study reveals that the harrier numbers have been declining over the recent years. Every winter, birds like Gangai, Dewani, Hira, Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli cross mountains and deserts retracing a memory of thousands of years, trusting the same grass patch will be waiting for them when they arrive. But the question is, will they still be?
 
 
 

@@ -20,6 +20,7 @@ const Cafe_in_Grassland = () => {
                          
                         <p className='mt-3'>
                             After a day of flying and foraging, birds head to their roost, a chosen place to spend their night. For harriers, that place is the grasslands. Before settling down in their roost, we observed that harriers habitually congregated near bare patches close by. This is akin to a cafe for men and women who gather for a quiet time before they retreat to their homes. 
+ 
 
 
 

@@ -91,8 +91,8 @@ const ScrollSection2 = ({ scroll_items, side = 'left', img_fill = false }: Scrol
 
     
 
-    gsap.to(panels, { opacity: 0, duration: 0.8, ease: 'power2.inOut' })
-    gsap.to(panels[currentIndex], { opacity: 1, duration: 1.2, ease: 'power2.inOut' })
+    gsap.to(panels, { opacity: 0, duration: 0, ease: 'power2.inOut' })
+    gsap.to(panels[currentIndex], { opacity: 1, duration: 0, ease: 'power2.inOut' })
 
     // Only play the video that's actually in view; pause the rest so N stacked
     // sections aren't all decoding video simultaneously off-screen
@@ -114,7 +114,7 @@ const ScrollSection2 = ({ scroll_items, side = 'left', img_fill = false }: Scrol
       <div className="md:w-1/3 px-5 z-10">
         {scroll_items.map((item, i) => (
           <div key={i} className="scroll-text h-[100dvh] flex items-center">
-            <div className="bg-[#f5f0e8] p-4 rounded-xl">{item.content}</div>
+            <div className=" p-4 rounded-xl">{item.content}</div>
           </div>
         ))}
       </div>

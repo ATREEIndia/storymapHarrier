@@ -452,7 +452,7 @@ export const locations: StoryLocation[] = [
     id:          9,
     title:       "Western India Transit, Gujarat",
     subtitle:    "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Days/day21.png",
-    description: "Continuing south-east, Gangai crossed the dry grasslands and agricultural landscapes of western India, stopping to hunt before reaching his winter destination.",
+    description: "Continuing south-east, Gangai crossed the dry grasslands and agricultural landscapes of western India, stopping to hunt before reaching his winter destination",
      img:"https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/arcgis/gujarat.jpg",
     lat:         23.40776,
     lng:         71.8192,
