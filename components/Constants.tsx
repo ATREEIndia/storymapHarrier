@@ -74,7 +74,7 @@ export const scroll_encounter = [
             <div className="flex flex-col gap-5">
                 <b>Harriers of India</b>
                 <p className="text-gray-800 text-lg">
-                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has the largest roost for Montagu’s and Pallid Harriers.
+                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has the largest roost for Montagu’s and Pallid Harriers in Asia.
 
 
 

@@ -37,6 +37,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={false}
             is_center={true}
+            caption="food passing"
             img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/food_pass.jpeg"
             content={
                 <div>
@@ -59,6 +60,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={true}
             is_center={true}
+            caption="cropland "
             img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_kazakisthan.jpg"
             content={
                 <div>
