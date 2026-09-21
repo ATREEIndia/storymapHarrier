@@ -33,6 +33,11 @@ const RELEASE_BUFFER_VH = 100;
 const MAX_STEP = 140;
 
 export default function ScrollMap() {
+  const sectionRef00 = useRef<HTMLElement>(null);
+
+
+
+
   const controlsRef = useRef<MapControls | null>(null);
   const activeIdxRef = useRef<number>(0);
   const isAnimatingRef = useRef<boolean>(false);
@@ -123,6 +128,30 @@ export default function ScrollMap() {
       return Math.sign(delta) * capped;
     };
 
+
+
+    // helper, defined once inside the main useEffect (near atBoundary/clampDelta)
+    const isSectionStuck = (): boolean => {
+      const el = sectionRef00.current;
+      if (!el) return false;
+      // Sticky section's top is 0 once it's pinned to the viewport top.
+      // Before that it's still sliding in from below — let native scroll run.
+      return el.getBoundingClientRect().top <= 1;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ── Boundary check ──────────────────────────────────────────────────
     // True when the left panel has nothing left to consume in the given
     // scroll direction (fully scrolled to bottom going down, or fully at
@@ -172,7 +201,9 @@ export default function ScrollMap() {
 
     // ── Redirect map panel scroll to left panel ───────────────────────────
     // Wheel events on map → scroll left panel
-    const onMapWheel = (e: WheelEvent) => {
+
+
+    const onMapWheel0 = (e: WheelEvent) => {
       const delta = clampDelta(e.deltaY);
       // At a boundary: let the event pass through untouched so the sticky
       // wrapper's release buffer (or native page scroll) can take over.
@@ -183,12 +214,35 @@ export default function ScrollMap() {
       panel.scrollBy({ top: delta, behavior: "auto" });
     };
 
+    const onMapWheel = (e: WheelEvent) => {
+      if (!isSectionStuck()) return; // not fully in view yet — don't intercept
+      const delta = clampDelta(e.deltaY);
+      if (atBoundary(delta)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (clampIntroLock(delta)) return;
+      panel.scrollBy({ top: delta, behavior: "auto" });
+    };
+    const onMapTouchMove = (e: TouchEvent) => {
+      if (!isSectionStuck()) return;
+      const rawDy = touchStartY - e.touches[0].clientY;
+      const dy = clampDelta(rawDy);
+      if (atBoundary(dy)) return;
+      e.preventDefault();
+      touchStartY = e.touches[0].clientY;
+      if (clampIntroLock(dy)) return;
+      panel.scrollBy({ top: dy, behavior: "auto" });
+    };
+
+
+
+
     // Touch events on map → scroll left panel
     let touchStartY = 0;
     const onMapTouchStart = (e: TouchEvent) => {
       touchStartY = e.touches[0].clientY;
     };
-    const onMapTouchMove = (e: TouchEvent) => {
+    const onMapTouchMove0 = (e: TouchEvent) => {
       const rawDy = touchStartY - e.touches[0].clientY;
       const dy = clampDelta(rawDy);
       if (atBoundary(dy)) return;
@@ -200,6 +254,7 @@ export default function ScrollMap() {
 
     // Keyboard scroll — works when map panel is focused
     const onMapKeyDown = (e: KeyboardEvent) => {
+      if (!isSectionStuck()) return;
       const scrollKeys = ["ArrowDown", "ArrowUp", "PageDown", "PageUp", " "];
       if (!scrollKeys.includes(e.key)) return;
       const amount = ["PageDown", "PageUp"].includes(e.key)
@@ -211,6 +266,8 @@ export default function ScrollMap() {
       if (clampIntroLock(delta)) return;
       panel.scrollBy({ top: delta, behavior: "smooth" });
     };
+
+
 
     // Use capture:true so our handler fires before ArcGIS intercepts events
     map.addEventListener("wheel", onMapWheel, { passive: false, capture: true });
@@ -225,18 +282,37 @@ export default function ScrollMap() {
     // needed here — the panel's own native scroll already releases
     // naturally at its top/bottom, this only ever intervenes to hold the
     // intro in place.
-    const onPanelWheel = (e: WheelEvent) => {
+    const onPanelWheel0 = (e: WheelEvent) => {
       if (clampIntroLock(clampDelta(e.deltaY))) {
         e.preventDefault();
         e.stopPropagation();
       }
     };
 
+    const onPanelWheel = (e: WheelEvent) => {
+      if (!isSectionStuck()) return;
+      if (clampIntroLock(clampDelta(e.deltaY))) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    const onPanelTouchMove = (e: TouchEvent) => {
+  if (!isSectionStuck()) return;
+  const currentY = e.touches[0].clientY;
+  const rawDy = panelTouchStartY - currentY;
+  panelTouchStartY = currentY;
+  if (clampIntroLock(clampDelta(rawDy))) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+};
+
     let panelTouchStartY = 0;
     const onPanelTouchStart = (e: TouchEvent) => {
       panelTouchStartY = e.touches[0].clientY;
     };
-    const onPanelTouchMove = (e: TouchEvent) => {
+    const onPanelTouchMove0 = (e: TouchEvent) => {
       const currentY = e.touches[0].clientY;
       const rawDy = panelTouchStartY - currentY;
       panelTouchStartY = currentY;
@@ -324,7 +400,7 @@ export default function ScrollMap() {
     // itself) + a release buffer that native scroll eats into once the
     // internal panel scroll is exhausted, before unpinning.
     <div style={{ position: "relative", height: `calc(100vh + ${RELEASE_BUFFER_VH}vh)` }}>
-      <section
+      <section ref={sectionRef00}
         style={{
           position: "sticky",
           top: 0,
@@ -490,18 +566,18 @@ export default function ScrollMap() {
               {/* Subtitle */}
               <div className="w-full flex  ">
                 <Image
-                unoptimized
-                alt=""
-                src={loc.subtitle}
-                width={100}
-                height={100}
-                className="object-contain  "
+                  unoptimized
+                  alt=""
+                  src={loc.subtitle}
+                  width={100}
+                  height={100}
+                  className="object-contain  "
                 />
                 {/* <p className="bg-orange-500 p-2 text-white font-bold rounded-2xl">
                 {loc.subtitle}
               </p> */}
               </div>
-              
+
 
               {/* Description */}
               <p style={{

@@ -33,6 +33,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import What_happens_home_not_exist from '@/components/What_happens_home_not_exist';
 import Threats from '@/components/Threats';
+import ScrollMapx from '@/components/ScrollMapx';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
@@ -115,7 +116,7 @@ const page = () => {
 
       </div>
 
-      <ScrollMap3 />
+      <ScrollMapx />
 
       <div className='py-20'>
         <AddionalInfo

@@ -3,7 +3,7 @@
 
 
 :root {
-  --background: #ffffff;
+  --background: #f5f0e8;
   --foreground: #171717;
 }
 
@@ -20,7 +20,7 @@
   :root {
     /* --background: #0a0a0a;
     --foreground: #ededed; */
-     --background: #ffffff;
+     --background: #f5f0e8;
   --foreground: #171717;
   }
 }
