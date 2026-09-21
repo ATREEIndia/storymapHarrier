@@ -200,30 +200,7 @@ export const scroll_day_researcher = [
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_on_pole.mp4',
     },
-    // {
-    //     content: (
-    //         <div className="flex flex-col gap-5">
-    //             <p className="text-gray-800 text-lg">
-    //                 Collecting Pellets...
-    //             </p>
-    //         </div>
-    //     ),
-    //     media_type: "image",
-    //     media_src:
-    //         'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/collecting_pellets.jpg',
-    // },
-    // {
-    //     content: (
-    //         <div className="flex flex-col gap-5">
-    //             <p className="text-gray-800 text-lg">
-    //                 instruments...
-    //             </p>
-    //         </div>
-    //     ),
-    //     media_type: "image",
-    //     media_src:
-    //         'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/research_Instruments.jpg',
-    // },
+    
     {
         content: (
             <div className="flex flex-col gap-5">

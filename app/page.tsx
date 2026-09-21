@@ -34,6 +34,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import What_happens_home_not_exist from '@/components/What_happens_home_not_exist';
 import Threats from '@/components/Threats';
 import ScrollMapx from '@/components/ScrollMapx';
+import ScrollMapx2 from '@/components/ScrollMapx2';
+import ScrollMapx3 from '@/components/ScrollMapx3';
+import ScrollSectionx3 from '@/components/ScrollSectionx3';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
@@ -47,10 +50,13 @@ const page = () => {
     // Refresh ScrollTrigger after full page layout stabilizes
     const timer = setTimeout(() => {
       ScrollTrigger.refresh()
-    }, 500)
+    }, 1000)
 
     return () => clearTimeout(timer)
   }, [])
+
+
+  
   return (
     <main className='w-full flex flex-col bg-[#f5f0e8]'>
 
@@ -116,7 +122,7 @@ const page = () => {
 
       </div>
 
-      <ScrollMapx />
+      <ScrollMapx2 />
 
       <div className='py-20'>
         <AddionalInfo

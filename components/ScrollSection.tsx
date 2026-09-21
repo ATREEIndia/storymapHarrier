@@ -457,7 +457,7 @@
 
 'use client'
 
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -488,14 +488,19 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
     () => {
       if (!scroll_items || scroll_items.length === 0) return
 
-      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text')
+      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text0',containerRef_roost.current)
       sections.forEach((section, index) => {
         ScrollTrigger.create({
           trigger: section,
           start: 'top 50%',
           end: 'bottom 50%',
+          refreshPriority: -1,
           onEnter: () => setCurrentImgIndex(index),
           onEnterBack: () => setCurrentImgIndex(index),
+          onToggle: (self) => {
+      if (self.isActive) {
+        setCurrentImgIndex(index)
+      }},
         })
       })
 
@@ -532,6 +537,11 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
   if (!scroll_items || scroll_items.length === 0) {
     return null
   }
+
+  // useEffect(()=>{
+  //   alert("img"+currentIndex)
+
+  // },[currentIndex])
 
   return (
     <div
@@ -649,7 +659,7 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
           {scroll_items.map((item, i) => (
             <div
               key={i}
-              className="scroll-text h-[100dvh] flex items-center justify-center"
+              className="scroll-text0 h-[100dvh] flex items-center justify-center"
             >
               <div className="bg-[#f5f0e8] p-6 rounded-xl  border-stone-200 ">
                 {item.content}
