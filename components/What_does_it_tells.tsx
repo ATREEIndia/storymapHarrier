@@ -10,7 +10,7 @@ const What_does_it_tells = () => {
 
             <Magazine_img_tsx
                 is_center={true}
-                img_right={false}
+                img_right={true}
                 img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/collecting_pellets.png"
                 content={
                     <div>
@@ -32,6 +32,38 @@ const What_does_it_tells = () => {
 
                     </div>}
             />
+
+               <Magazine_img_tsx
+                is_center={true}
+                img_right={false}
+                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/pellects_collected.JPG"
+                content={
+                    <div>
+
+
+
+                        <p className='mt-3'>
+                            These ‘cafes’ are the best locations to collect evidence of what harriers eat. Evidence that comes straight from their mouth.
+
+
+
+                        </p>
+
+
+
+
+
+
+
+
+
+
+                    </div>}
+            />
+
+
+
+
             <Magazine_img_tsx
                 is_center={true}
                 img_right={true}
