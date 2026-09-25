@@ -65,7 +65,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "Ringing birds helps researchers track and study them as they move across locations, countries and continents",
+        caption: "Ringing birds helps researchers track and study them as they move across locations, countries and continentsRinging birds helps researchers track and study them as they move across locations, countries and continents",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/intro_slide/measuring_wingspan_ring.jpg',
     },
@@ -82,7 +82,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "will be added ",
+        caption: "Six harriers from one family  ",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/bird_flying.jpg',
     },
@@ -98,7 +98,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "",
+        caption: "will be replaced with a video",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/people_in_filed2.JPG',
     },
@@ -279,7 +279,7 @@ export const finding_roost
                 </div>
             ),
             media_type: "video",
-            caption: "will be replaced",
+            caption: "",
             media_src:
                 'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/birds_flying_in_group.mp4',
         },
@@ -292,7 +292,7 @@ export const finding_roost
                 </div>
             ),
             media_type: "image",
-            caption: "will be replaced ",
+            caption: " ",
             media_src:
                 'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/day_of_researcher/blue_grey_harrier.jpg',
         },

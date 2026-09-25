@@ -23,7 +23,7 @@ interface MapControls {
 
 export default function ScrollMap() {
   const controlsRef = useRef<MapControls | null>(null);
-  const activeIdxRef = useRef<number>(0);
+  const activeIdxRef = useRef<number>(-1);
   const isAnimatingRef = useRef<boolean>(false);
 
   const sectionRef = useRef<HTMLElement>(null);

@@ -470,7 +470,7 @@ export interface ScrollItem {
   media_src: string
   alt?: string
   media_type: string,
-  caption:string
+  caption: string
 }
 
 interface ScrollSectionProps {
@@ -482,13 +482,13 @@ interface ScrollSectionProps {
 const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => {
   const containerRef_roost = useRef<HTMLDivElement>(null)
   const [currentIndex, setCurrentImgIndex] = useState(0)
-
+  const [expanded, setExpanded] = useState(false)
   // Track text triggers to switch active media index
   useGSAP(
     () => {
       if (!scroll_items || scroll_items.length === 0) return
 
-      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text0',containerRef_roost.current)
+      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text0', containerRef_roost.current)
       sections.forEach((section, index) => {
         ScrollTrigger.create({
           trigger: section,
@@ -498,9 +498,10 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
           onEnter: () => setCurrentImgIndex(index),
           onEnterBack: () => setCurrentImgIndex(index),
           onToggle: (self) => {
-      if (self.isActive) {
-        setCurrentImgIndex(index)
-      }},
+            if (self.isActive) {
+              setCurrentImgIndex(index)
+            }
+          },
         })
       })
 
@@ -521,13 +522,13 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
 
       gsap.to(images, {
         opacity: 0,
-         duration: 0,
+        duration: 0,
         // ease: 'power2.inOut',
       })
 
       gsap.to(images[currentIndex], {
         opacity: 1,
-         duration: 0,
+        duration: 0,
         // ease: 'power2.inOut',
       })
     },
@@ -583,21 +584,42 @@ const ScrollSection = ({ scroll_items, side, img_fill }: ScrollSectionProps) => 
                         className="object-cover"
                       />
                       <i className="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent">
-                        {item.caption??""}
+                        {item.caption ?? ""}
                       </i>
                     </>
                   ) : (
                     // Contain mode: image may not fill the box, so caption must follow the real image, not the container
-                    <div className="relative max-w-full max-h-full">
+
+
+                    // <div className="relative max-w-full max-h-full">
+                    //   <img
+                    //     alt={item.alt || 'story image'}
+                    //     src={item.media_src}
+                    //     className="block max-w-full max-h-full w-auto h-auto object-contain object-top md:object-center "
+                    //   />
+                    //   <i className={`${item.caption?"":"hidden"} absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent`}>
+                    //    {item.caption??""}
+                    //   </i>
+                    // </div>
+                    <figure className="relative inline-block max-w-full max-h-full m-0">
                       <img
-                        alt={item.alt || 'story image'}
+                        alt={item.alt || item.caption || "Story image"}
                         src={item.media_src}
-                        className="block max-w-full max-h-full w-auto h-auto object-contain object-top md:object-center "
+                        className="block max-w-full max-h-full w-auto h-auto"
                       />
-                      <i className={`${item.caption?"":"hidden"} absolute bottom-0 left-0 right-0 z-10 px-4 py-3 text-white text-sm bg-gradient-to-t from-black/70 to-transparent`}>
-                       {item.caption??""}
-                      </i>
-                    </div>
+
+                      {item.caption && (
+                        <figcaption
+                          className="absolute inset-x-0 bottom-0 z-10 px-4 pb-3 pt-10 text-white text-sm leading-snug bg-gradient-to-t from-black/80 via-black/40 to-transparent [text-shadow:0_1px_2px_rgb(0_0_0/0.6)]"
+                        >
+                          <p className="italic text-xs">{item.caption}</p>
+                          
+                        </figcaption>
+                      )}
+                    </figure>
+
+
+
                   )}
                 </div>
               )}

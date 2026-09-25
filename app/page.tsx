@@ -122,7 +122,7 @@ const page = () => {
 
       </div>
 
-      <ScrollMapx2 />
+      <ScrollMapx3 />
 
       <div className='py-20'>
         <AddionalInfo

@@ -11,10 +11,9 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const ArcGISMap = dynamic(
-  () => import("@/components/ArcGISMap"),
-  { ssr: false }
-);
+const ArcGISMap = dynamic(() => import("@/components/ArcGISMap"), {
+  ssr: false,
+});
 
 interface MapControls {
   goToLocation: (idx: number) => Promise<void>;
@@ -22,9 +21,23 @@ interface MapControls {
   zoomToShowAll: () => Promise<void>;
 }
 
-export default function ScrollMapx2() {
+/** Index used for the intro panel (before any location). */
+const INTRO = -1;
+
+/**
+ * How far down the panel a section's top edge must reach before it counts
+ * as "entered". 0.6 = when the section's top passes 60% of the panel height.
+ * Raise it (e.g. 0.9) to trigger earlier, lower it (e.g. 0.3) to trigger later.
+ */
+const TRIGGER_RATIO = 0.6;
+
+export default function ScrollMap() {
   const controlsRef = useRef<MapControls | null>(null);
-  const activeIdxRef = useRef<number>(0);
+
+  // What the map is currently showing
+  const activeIdxRef = useRef<number>(INTRO);
+  // What the scroll position is asking for (always the latest request)
+  const targetIdxRef = useRef<number>(INTRO);
   const isAnimatingRef = useRef<boolean>(false);
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,262 +55,158 @@ export default function ScrollMapx2() {
     return () => window.removeEventListener("resize", checkSize);
   }, []);
 
-  const handleSectionEnter = useCallback(async (idx: number) => {
-    if (idx === activeIdxRef.current) return;
-    if (!controlsRef.current) return;
-    if (isAnimatingRef.current) return;
-
+  // ── Map transition queue ───────────────────────────────────────────────
+  // Runs animations one at a time until the map matches the latest target.
+  // Requests made mid-animation are not lost; they are picked up next loop.
+  const runTransitions = useCallback(async () => {
+    if (isAnimatingRef.current || !controlsRef.current) return;
     isAnimatingRef.current = true;
-    const prev = activeIdxRef.current;
-    activeIdxRef.current = idx;
 
     try {
-      if (idx > prev) {
-        await controlsRef.current.goToLocation(idx);
-        if (idx === locations.length - 1) {
-          await new Promise((r) => setTimeout(r, 3800));
-          await controlsRef.current.zoomToShowAll();
+      while (targetIdxRef.current !== activeIdxRef.current) {
+        const controls = controlsRef.current;
+        if (!controls) break;
+
+        const prev = activeIdxRef.current;
+        const next = targetIdxRef.current;
+
+        try {
+          if (next === INTRO) {
+            // Scrolled back to the intro → zoom out
+            await controls.zoomToShowAll();
+          } else if (next > prev) {
+            // Moving forward (includes INTRO → 0, zooming into the first item)
+            await controls.goToLocation(next);
+
+            if (next === locations.length - 1) {
+              await new Promise((r) => setTimeout(r, 3800));
+              // Only zoom out if the user is still on the last item
+              if (targetIdxRef.current === next) {
+                await controls.zoomToShowAll();
+              }
+            }
+          } else {
+            // Moving backward between locations
+            await controls.goToPrevLocation(next);
+          }
+
+          activeIdxRef.current = next;
+        } catch {
+          // Animation failed or was interrupted; stop and wait for next scroll
+          break;
         }
-      } else {
-        await controlsRef.current.goToPrevLocation(idx);
       }
-    } catch {
-      activeIdxRef.current = prev;
     } finally {
       isAnimatingRef.current = false;
     }
   }, []);
 
-  const handleMapReady = useCallback((controls: MapControls) => {
-    controlsRef.current = controls;
-  }, []);
+  const handleSectionEnter = useCallback(
+    (idx: number) => {
+      if (idx === targetIdxRef.current) return;
+      targetIdxRef.current = idx;
+      runTransitions();
+    },
+    [runTransitions]
+  );
 
-//   useEffect(() => {
-//     const section = sectionRef.current;
-//     const panel = leftPanelRef.current;
-//     const inner = leftPanelInnerRef.current;
-//     if (!section || !panel || !inner) return;
+  const handleMapReady = useCallback(
+    (controls: MapControls) => {
+      controlsRef.current = controls;
+      // If the user scrolled before the map finished loading, catch up now
+      runTransitions();
+    },
+    [runTransitions]
+  );
 
-//     const ctx = gsap.context(() => {
-//       let st: ScrollTrigger | null = null;
-//       let resizeTimeout: ReturnType<typeof setTimeout>;
-//       let scrollDistance = 0;
-//       let breakpoints: number[] = [];
+  // ── Scoped GSAP Setup ──────────────────────────────────────────────────
+  useEffect(() => {
+    const section = sectionRef.current;
+    const panel = leftPanelRef.current;
+    const inner = leftPanelInnerRef.current;
+    if (!section || !panel || !inner) return;
 
-//       const measure = () => {
-//         scrollDistance = Math.max(inner.scrollHeight - panel.clientHeight, 0);
-//         const sectionEls = Array.from(
-//           inner.querySelectorAll<HTMLElement>("[data-section-idx]")
-//         );
-//         breakpoints = sectionEls.map((el) => el.offsetTop);
-//       };
+    const ctx = gsap.context(() => {
+      let st: ScrollTrigger | null = null;
+      let resizeTimeout: ReturnType<typeof setTimeout>;
+      let scrollDistance = 0;
+      let breakpoints: number[] = [];
 
-//       const build = () => {
-//         measure();
-//         if (scrollDistance <= 0) return;
+      const measure = () => {
+        scrollDistance = Math.max(inner.scrollHeight - panel.clientHeight, 0);
+        const sectionEls = Array.from(
+          inner.querySelectorAll<HTMLElement>("[data-section-idx]")
+        );
+        breakpoints = sectionEls.map((el) => el.offsetTop);
+      };
 
-//         if (st) {
-//           st.vars.end = `+=${scrollDistance}`;
-//          // st.refresh();
-//         } else {
-//           st = ScrollTrigger.create({
-//             trigger: section,
-//             start: "top top",
-//             end: () => `+=${scrollDistance}`,
-//             pin: true,
-//             pinSpacing: true,
-//             scrub: true,
-//             anticipatePin: 1,
-//             invalidateOnRefresh: true,
-//             onUpdate: (self) => {
-//               const scrollTop = self.progress * scrollDistance;
-//               gsap.set(inner, { y: -scrollTop });
-//               if (progressBarRef.current) {
-//                 progressBarRef.current.style.width = `${self.progress * 100}%`;
-//               }
-//               let idx = -1;
-//               for (let i = 0; i < breakpoints.length; i++) {
-//                 if (scrollTop >= breakpoints[i] - 1) idx = i;
-//               }
-//               handleSectionEnter(idx === -1 ? 0 : idx);
-//             },
-//           });
-//         }
+      const build = () => {
+        measure();
+        if (scrollDistance <= 0) return;
 
-//         // Inform downstream components like ScrollSection to recalculate trigger positions
-//       //  ScrollTrigger.refresh();
-//       };
-
-//       build();
-
-//       const onResize = () => {
-//         clearTimeout(resizeTimeout);
-//         resizeTimeout = setTimeout(build, 150);
-//       };
-//       window.addEventListener("resize", onResize);
-
-//       const ro = new ResizeObserver(() => {
-//         clearTimeout(resizeTimeout);
-//         resizeTimeout = setTimeout(build, 150);
-//       });
-//       ro.observe(inner);
-
-//       return () => {
-//         clearTimeout(resizeTimeout);
-//         window.removeEventListener("resize", onResize);
-//         ro.disconnect();
-//       };
-//     }, section);
-
-//     return () => ctx.revert();
-//   }, [isDesktop, handleSectionEnter]);
-
-
-useEffect(() => {
-  const section = sectionRef.current;
-  const panel = leftPanelRef.current;
-  const inner = leftPanelInnerRef.current;
-
-  if (!section || !panel || !inner) return;
-
-  const ctx = gsap.context(() => {
-    let st: ScrollTrigger | null = null;
-    let resizeTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    let scrollDistance = 0;
-    let breakpoints: number[] = [];
-
-    const measure = () => {
-      scrollDistance = Math.max(
-        inner.scrollHeight - panel.clientHeight,
-        0
-      );
-
-      const sectionEls = Array.from(
-        inner.querySelectorAll<HTMLElement>("[data-section-idx]")
-      );
-
-      breakpoints = sectionEls.map((el) => el.offsetTop);
-    };
-
-    const update = (self: ScrollTrigger) => {
-      const scrollTop = self.progress * scrollDistance;
-
-      gsap.set(inner, {
-        y: -scrollTop,
-        force3D: true,
-      });
-
-      if (progressBarRef.current) {
-        progressBarRef.current.style.width =
-          `${self.progress * 100}%`;
-      }
-
-      let idx = -1;
-
-      for (let i = 0; i < breakpoints.length; i++) {
-        if (scrollTop >= breakpoints[i] - 1) {
-          idx = i;
+        if (st) {
+          st.vars.end = `+=${scrollDistance}`;
+          st.refresh();
+          return;
         }
-      }
 
-      handleSectionEnter(
-        idx === -1 ? 0 : idx
-      );
-    };
-
-    const build = () => {
-      measure();
-
-      if (scrollDistance <= 0) {
-        return;
-      }
-
-      if (!st) {
         st = ScrollTrigger.create({
           trigger: section,
-
           start: "top top",
-
-          end: () => {
-            measure();
-
-            return `+=${scrollDistance}`;
-          },
-
+          end: () => `+=${scrollDistance}`,
           pin: true,
           pinSpacing: true,
-
           scrub: true,
-
           anticipatePin: 1,
-
           invalidateOnRefresh: true,
+          onRefresh: measure,
+          onUpdate: (self) => {
+            const scrollTop = self.progress * scrollDistance;
+            gsap.set(inner, { y: -scrollTop });
 
-          onRefresh: () => {
-            measure();
+            if (progressBarRef.current) {
+              progressBarRef.current.style.width = `${self.progress * 100}%`;
+            }
+
+            // A section counts as entered once its top passes the trigger line
+            const triggerLine = scrollTop + panel.clientHeight * TRIGGER_RATIO;
+
+            let idx = INTRO;
+            for (let i = 0; i < breakpoints.length; i++) {
+              if (triggerLine >= breakpoints[i]) idx = i;
+            }
+
+            handleSectionEnter(idx);
           },
-
-          onUpdate: update,
         });
-      } else {
-        measure();
-      }
-    };
 
-    build();
-
-    const requestRebuild = () => {
-      if (resizeTimeout) {
-        clearTimeout(resizeTimeout);
-      }
-
-      resizeTimeout = setTimeout(() => {
-        measure();
-
-        /*
-         * Do not call st.refresh() here.
-         *
-         * Let ScrollTrigger's normal refresh cycle
-         * handle downstream triggers.
-         */
         ScrollTrigger.refresh();
-      }, 150);
-    };
+      };
 
-    window.addEventListener(
-      "resize",
-      requestRebuild
-    );
+      build();
 
-    const ro = new ResizeObserver(() => {
-      requestRebuild();
-    });
-
-    ro.observe(inner);
-
-    return () => {
-      if (resizeTimeout) {
+      const onResize = () => {
         clearTimeout(resizeTimeout);
-      }
+        resizeTimeout = setTimeout(build, 150);
+      };
 
-      window.removeEventListener(
-        "resize",
-        requestRebuild
-      );
+      window.addEventListener("resize", onResize);
 
-      ro.disconnect();
+      const ro = new ResizeObserver(() => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(build, 150);
+      });
+      ro.observe(inner);
 
-      if (st) {
-        st.kill();
-        st = null;
-      }
-    };
-  }, section);
+      return () => {
+        clearTimeout(resizeTimeout);
+        window.removeEventListener("resize", onResize);
+        ro.disconnect();
+      };
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, [isDesktop, handleSectionEnter]);
-
+    return () => ctx.revert();
+  }, [isDesktop, handleSectionEnter]);
 
   return (
     <section
@@ -310,6 +219,7 @@ useEffect(() => {
         overflow: "hidden",
       }}
     >
+      {/* ══ LEFT PANEL — text, driven by GSAP transform ══ */}
       <div
         ref={leftPanelRef}
         className="left-panel"
@@ -327,6 +237,7 @@ useEffect(() => {
           borderTop: isDesktop ? "none" : "1px solid rgba(0,0,0,0.08)",
         }}
       >
+        {/* Progress bar */}
         <div
           style={{
             position: "absolute",
@@ -340,11 +251,17 @@ useEffect(() => {
         >
           <div
             ref={progressBarRef}
-            style={{ height: "100%", width: "0%", background: "#8B4513" }}
+            style={{
+              height: "100%",
+              width: "0%",
+              background: "#8B4513",
+            }}
           />
         </div>
 
+        {/* Sliding content */}
         <div ref={leftPanelInnerRef}>
+          {/* ── Intro ── */}
           <div
             style={{
               minHeight: isDesktop ? "100vh" : "60vh",
@@ -390,10 +307,10 @@ useEffect(() => {
               }}
             >
               Gangai flew along the Central Asian Flyway to reach India.
-              Perhaps since the ice ages, the harriers have been following
-              the same route and this has got hard wired into their brain.
-              When on such long-distance migrations, they have to
-              occasionally stop for a few days to refuel.
+              Perhaps since the ice ages, the harriers have been following the
+              same route and this has got hard wired into their brain. When on
+              such long-distance migrations, they have to occasionally stop for
+              a few days to refuel.
             </p>
             <p
               style={{
@@ -418,6 +335,7 @@ useEffect(() => {
             </div>
           </div>
 
+          {/* ── Story sections ── */}
           {locations.map((loc, i) => (
             <div
               key={loc.id}
@@ -439,6 +357,7 @@ useEffect(() => {
                   margin: "14px 0",
                 }}
               />
+
               <h2
                 style={{
                   margin: 0,
@@ -451,6 +370,7 @@ useEffect(() => {
               >
                 {loc.title}
               </h2>
+
               <div className="w-full flex">
                 <Image
                   unoptimized
@@ -458,9 +378,11 @@ useEffect(() => {
                   src={loc.subtitle}
                   width={100}
                   height={100}
+                  onLoad={() => ScrollTrigger.refresh()}
                   className="object-contain"
                 />
               </div>
+
               <p
                 style={{
                   marginTop: "22px",
@@ -471,6 +393,7 @@ useEffect(() => {
               >
                 {loc.description}
               </p>
+
               <div
                 style={{
                   position: "relative",
@@ -484,13 +407,13 @@ useEffect(() => {
                 <Image
                   unoptimized
                   src={loc.img}
-                  alt="Northern Harrier bird"
+                  alt={loc.title}
                   fill
-                  className={`object-cover shadow-lg rounded-2xl ${
-                    loc.img.length > 2 ? "flex" : "block"
-                  }`}
+                  onLoad={() => ScrollTrigger.refresh()}
+                  className="object-cover shadow-lg rounded-2xl"
                 />
               </div>
+
               {loc.neighbors.length > 0 && (
                 <div
                   style={{
@@ -506,6 +429,7 @@ useEffect(() => {
         </div>
       </div>
 
+      {/* ══ RIGHT PANEL — map ══ */}
       <div
         ref={mapPanelRef}
         style={{
