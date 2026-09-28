@@ -168,7 +168,7 @@ export default function StoryMapResources() {
                       href={resource.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 transition-colours"
+                      className="text-blue-600 hover:text-blue-800 transition-colours min-w-5 "
                     >
                       <img
                         src="/new-tab.png"
