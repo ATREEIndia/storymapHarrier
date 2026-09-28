@@ -99,7 +99,7 @@ export default function PredatorShowcase({
 
           {/* Caption */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 pt-24 sm:p-8 sm:pt-32">
-            <div aria-live="polite" className="max-w-xl">
+            <div aria-live="polite" className="w-full">
               <p className=" text-3xl text-white leading-none sm:text-5xl">{active.name}</p>
               <p className="mt-2 text-base italic text-white sm:text-lg">
                 {active.scientificName}
@@ -143,6 +143,7 @@ export default function PredatorShowcase({
               >
                 <span className="relative h-16 w-16 sm:h-20 sm:w-20">
                   <Image
+                  unoptimized
                     src={p.illustration}
                     alt=""
                     fill
@@ -214,6 +215,7 @@ function MediaLayer({
     >
       {media.type === "image" ? (
         <Image
+        unoptimized
           src={media.src}
           alt={media.alt}
           fill
