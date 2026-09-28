@@ -6,6 +6,7 @@ import { locations } from "@/data/locations";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Title from "./Title";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -272,7 +273,7 @@ export default function ScrollMap() {
               borderBottom: "1px solid rgba(0,0,0,0.06)",
             }}
           >
-            <p
+            {/* <p
               style={{
                 margin: 0,
                 fontSize: "10px",
@@ -282,8 +283,9 @@ export default function ScrollMap() {
               }}
             >
               AN INTERACTIVE JOURNEY
-            </p>
-            <h1
+            </p> */}
+            <Title mainTitle="Following Gangai"/>
+            {/* <h1
               style={{
                 fontFamily: "Georgia, serif",
                 fontSize: isDesktop
@@ -296,30 +298,26 @@ export default function ScrollMap() {
               }}
             >
               Following Gangai
-            </h1>
+            </h1> */}
             <p
               style={{
                 marginTop: "10px",
-                fontFamily: "Georgia, serif",
+              
                 fontSize: "clamp(0.95rem, 1.4vw, 1.15rem)",
                 lineHeight: 1.55,
                 color: "rgba(0,0,0,0.52)",
               }}
             >
-              Gangai flew along the Central Asian Flyway to reach India.
-              Perhaps since the ice ages, the harriers have been following the
-              same route and this has got hard wired into their brain. When on
-              such long-distance migrations, they have to occasionally stop for
-              a few days to refuel.
+              The transmitters regularly sent us back signals from Gangai and we managed to map his journey. Perhaps since the ice ages, the harriers have been following the same route and this has got hard wired into their brain. When on such long-distance migrations, they have to occasionally stop for a few days to refuel.
             </p>
-            <p
-              style={{
-                marginTop: "30px",
-                fontSize: "11px",
-                letterSpacing: "0.32em",
-                textTransform: "uppercase",
-                color: "rgba(0,0,0,0.32)",
-              }}
+            <p className="animate-bounce mt-10 text-gray-500"
+              // style={{
+              //   marginTop: "30px",
+              //   fontSize: "11px",
+              //   letterSpacing: "0.32em",
+              //   textTransform: "uppercase"
+              //   ,
+              // }}
             >
               Scroll to follow the flight
             </p>
@@ -358,7 +356,9 @@ export default function ScrollMap() {
                 }}
               />
 
-              <h2
+              <Title mainTitle={loc.title}/>
+
+              {/* <h2
                 style={{
                   margin: 0,
                   fontFamily: "Georgia, serif",
@@ -369,7 +369,7 @@ export default function ScrollMap() {
                 }}
               >
                 {loc.title}
-              </h2>
+              </h2> */}
 
               <div className="w-full flex">
                 <Image
@@ -383,10 +383,10 @@ export default function ScrollMap() {
                 />
               </div>
 
-              <p
+              <p className="mt-10 text-gray-600 "
                 style={{
                   marginTop: "22px",
-                  fontSize: "14.5px",
+                  fontSize: "clamp(0.95rem, 1.4vw, 1.15rem)",
                   lineHeight: 1.85,
                   color: "rgba(0,0,0,0.68)",
                 }}

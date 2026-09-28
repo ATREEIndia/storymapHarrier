@@ -70,7 +70,7 @@ const Flashback = () => {
 
                        
 
-                        Soon the adults left on their migration and Gangai learnt to feed himself . By winter, as the days became shorter, an inherent migratory instinct kicked in and Gangai started on his first migratory flight. A distance of 5000 km over 22 days,  from Kazakhstan to India.  He was just over five months old.
+                        Soon the adults left on their migration and Gangai learnt to feed himself. By winter, as the days became shorter, an inherent migratory instinct kicked in and Gangai started on his first migratory flight. A distance of 5000 km over 22 days, from Kazakhstan to India.  He was just over five months old.
 
 
 

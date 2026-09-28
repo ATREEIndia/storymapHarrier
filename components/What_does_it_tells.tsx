@@ -17,9 +17,9 @@ const What_does_it_tells = () => {
 
 
 
+                        <Title mainTitle='What does the cafe tell us about the harrier diet?'/>
 
-
-                        <h1 className='font-semibold'>What does the cafe tell us about the harrier diet? </h1>
+                        
 
                         <p className='mt-3'>
                             The harriers, in the process of digesting their food, regurgitate and throw away the bones, hairs and feathers in the form of pellets. We spent the evenings collecting these pellets as their contents could open up a whole new world.  <br /><br />
@@ -95,6 +95,7 @@ const What_does_it_tells = () => {
                 img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/seeds.png"
                 content={
                     <div>
+                        <Title mainTitle='Harriers as seed dispersers!'/>
 
 
                         <p className='mt-3'>

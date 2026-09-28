@@ -14,7 +14,7 @@ const Predator = () => {
 
                         <Title
                             topTitle=""
-                            mainTitle="As the birds settle/Dusk"
+                            mainTitle="The birds settle down for the night"
                         />
 
 
