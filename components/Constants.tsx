@@ -528,7 +528,7 @@ export const finding_roost
             media_type: "image",
             caption: "",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/stopover.jpg',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/sameplace.jpg',
         },
         {
             content: (
