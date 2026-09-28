@@ -100,10 +100,10 @@ export const scroll_encounter = [
 
             </div>
         ),
-        media_type: "image",
-        caption: "will be replaced with a video",
+        media_type: "video",
+        caption: "",
         media_src:
-            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/people_in_filed2.JPG',
+            'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/intro_slide/how_do_we_know.mp4',
     },
     {
         content: (
@@ -281,7 +281,7 @@ export const finding_roost
             media_type: "video",
             caption: "",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/birds_flying_in_group.mp4',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/finding_roost2.mp4',
         },
         // {
         //     content: (
