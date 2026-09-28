@@ -37,6 +37,7 @@ import ScrollMapx from '@/components/ScrollMapx';
 import ScrollMapx2 from '@/components/ScrollMapx2';
 import ScrollMapx3 from '@/components/ScrollMapx3';
 import ScrollSectionx3 from '@/components/ScrollSectionx3';
+import PredatorShowcase from '@/components/PredatorShowcase';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
@@ -153,8 +154,11 @@ const page = () => {
         <What_does_it_tells />
       </div> 
       
-      <div className='mt-10'>
+      {/* <div className='mt-10'>
         <Predator />
+      </div> */}
+      <div className='mt-10'>
+        <PredatorShowcase />
       </div>
 
       {/* <div className='mt-10'>

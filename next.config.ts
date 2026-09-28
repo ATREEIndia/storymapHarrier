@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "atree-communication.s3.ap-south-1.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "atree-communication.s3.amazonaws.com",
+      },
     ],
   },
 

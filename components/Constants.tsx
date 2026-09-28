@@ -538,7 +538,7 @@ export const finding_roost
                         <b> </b>
                         We learnt that during their autumn migration from their breeding grounds to their destinations, the harriers stopped over the Thar Desert for a long stretch of time. And, on their spring migration back to Kazakhstan, some stopped again at the Thar Desert, though briefly. Their main stopover was the floodplains of the Amu Darya River in Afghanistan. There were other spring stopovers too but only for short durations of two to three 3 days.
 
-                        <br/> <br/>These findings helped us establish the importance of Thar Desert for these birds.
+                        <br /> <br />These findings helped us establish the importance of Thar Desert for these birds.
 
 
 
@@ -552,9 +552,9 @@ export const finding_roost
                     </span>
                     <span className="text-gray-800 text-lg">
                         <b> </b>
-                       We also found out that they stopped over the desert not so much in pursuit of the migrating locusts but for the resident grasshoppers, which formed their steady prey.
+                        We also found out that they stopped over the desert not so much in pursuit of the migrating locusts but for the resident grasshoppers, which formed their steady prey.
 
-                       
+
                     </span>
                     <span className='text-sm '>
                         Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
@@ -582,13 +582,13 @@ export const finding_roost
 
 
                     </p>
-                     <span className='text-sm '>
+                    <span className='text-sm '>
                         Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
                             href="https://link.springer.com/article/10.1186/s40462-025-00568-z">
                             Detour migration to circumvent the Himalayas in the Montagu’s Harrier Circus pygargus PAPER
                         </a>
                     </span>
-                    
+
 
                 </div>
             ),
@@ -676,3 +676,107 @@ export const threats_img
             content: (<p></p>)
         },
     ]
+
+export const predators_show = [
+    {
+        id: "1",
+        name: "Jungle Cat",
+        scientificName: "Felis chaus",
+        habitat: "Grasslands, wetlands, reed beds, scrublands and agricultural landscapes",
+        fact: "Jungle Cats are strong hunters of rodents and often hunt around wetlands, farms and villages where small prey is abundant.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators1_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "A Jungle Cat in grassland habitat",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators1.png",
+    },
+
+    {
+        id: "2",
+        name: "Indian Fox",
+        scientificName: "Vulpes bengalensis",
+        habitat: "Open grasslands, thorny scrub, semi-arid landscapes, agricultural fields and other non-forested areas",
+        fact: "The Indian Fox is native to the Indian subcontinent and is particularly associated with open and dry landscapes rather than dense forests.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators2_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "An Indian Fox in an open grassland habitat",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators2.png",
+    },
+
+    {
+        id: "3",
+        name: "Golden Jackal",
+        scientificName: "Canis aureus",
+        habitat: "Grasslands, scrublands, agricultural landscapes, wetlands and other open habitats",
+        fact: "Golden Jackals are highly adaptable omnivores that feed on a wide range of food, including small mammals, birds, insects, fruit and carrion.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators3_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "A Golden Jackal in an open landscape",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators3.png",
+    },
+
+    {
+        id: "4",
+        name: "Tawny Eagle",
+        scientificName: "Aquila rapax",
+        habitat: "Open grasslands, savannas, shrublands, semi-arid landscapes and cultivated areas",
+        fact: "Tawny Eagles are birds of open landscapes and feed on small mammals, birds, amphibians and carrion.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators4_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "A Tawny Eagle flying over an open landscape",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators4.png",
+    },
+
+    {
+        id: "5",
+        name: "Shepherd Dog",
+        scientificName: "Canis lupus familiaris",
+        habitat: "Human settlements, villages, agricultural landscapes and grazing areas",
+        fact: "Free-ranging and working dogs can occur around livestock and human settlements and may interact with wildlife in agricultural and grassland landscapes.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators5_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "A shepherd dog in a rural landscape",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators5.png",
+    },
+
+    {
+        id: "6",
+        name: "Rock Eagle-Owl",
+        scientificName: "Bubo bengalensis",
+        habitat: "Rocky hills, scrublands, ravines, open woodland, cultivated areas and river banks",
+        fact: "Rock Eagle-Owls are mainly nocturnal and often hunt from perches, feeding on rodents, birds, reptiles, frogs and large insects.",
+        media: {
+            type: "image",
+            src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators6_img.jpg",
+            poster:
+                "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/Threats/threatsArtboard_5.jpg",
+            alt: "A Rock Eagle-Owl perched in rocky scrub habitat",
+        },
+        illustration:
+            "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators6.png",
+    },
+]
