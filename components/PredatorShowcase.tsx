@@ -76,7 +76,7 @@ export default function PredatorShowcase({
 
   return (
    
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 ">
         <Title mainTitle="The predators are always lurking"/>
         
 
@@ -141,7 +141,7 @@ export default function PredatorShowcase({
                   selected ? "" : "hover:bg-[#222C24]",
                 ].join(" ")}
               >
-                <span className="relative h-16 w-16 sm:h-20 sm:w-20">
+                <span className="relative h-16 w-16 sm:h-30 sm:w-30">
                   <Image
                   unoptimized
                     src={p.illustration}
