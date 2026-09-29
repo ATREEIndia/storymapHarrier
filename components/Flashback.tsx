@@ -9,7 +9,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={true}
             is_center={true}
-            caption="Montagu’s harriers are ground-nesting birds, building their nests in open areas, amid tall grassy vegetation"
+            caption="Montagu’s harriers are ground-nesting birds, building their nests in open areas, amid tall grassy vegetation."
             img_src="https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.png"
             content={
                 <div>
@@ -37,7 +37,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={false}
             is_center={true}
-            caption="food passing"
+            caption="A ‘food pass’ unfolds like a dance in the sky. The male signals, the female leaves the nest, accepts the food mid-air and returns, keeping the nest hidden from predators"
             img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/food_pass.jpeg"
             content={
                 <div>

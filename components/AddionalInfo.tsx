@@ -112,23 +112,10 @@ const AdditionalInfo = ({ content, title }: Props) => {
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`
-                    ${isOpen?"":"animate-bounce"}
-                    inline-flex items-center gap-2
-                    text-xs text-orange-800
-                    hover:text-orange-950
-                    transition-colors
-                    cursor-pointer
-                `}
+                    ${isOpen?"":"animate-bounce"}  inline-flex items-center gap-2  text-xs text-orange-800   hover:text-orange-950    transition-colors   cursor-pointer      `}
             >
                 <span
-                    className="
-                        flex items-center justify-center
-                        w-5 h-5
-                        rounded-full
-                        border border-orange-700
-                        text-xs
-                    "
-                >
+                    className=" flex items-center justify-center   w-5 h-5   rounded-full   border border-orange-700   text-xs    "  >
                     {isOpen ? '−' : '+'}
                 </span>
 
@@ -140,19 +127,7 @@ const AdditionalInfo = ({ content, title }: Props) => {
             {/* Floating information */}
             {isOpen && (
                 <div
-                    className="
-                        absolute
-                        right-0
-                        top-full
-                        mt-3
-                        z-50
-                        w-[min(90vw,420px)]
-                        bg-orange-50
-                        border-l-4
-                        border-orange-800
-                        shadow-xl
-                        rounded-r-md
-                    "
+                    className="  absolute   right-0   top-full   mt-3       z-50   w-[min(90vw,420px)]    bg-orange-50  border-l-4   border-orange-800                    shadow-xl  rounded-r-md "
                 >
                     <div className="p-5 text-sm leading-6 text-gray-600 italic">
                         {content}
