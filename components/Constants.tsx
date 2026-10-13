@@ -7,7 +7,7 @@ export const scroll_encounter = [
         content: (
             <div className="flex flex-col gap-5 pt-10 xl:p-0">
                 <Title
-                    topTitle="The Encounter"
+                    
                     mainTitle="The day we found Gangai"
                 />
 
@@ -45,7 +45,7 @@ export const scroll_encounter = [
         content: (
             <div className="flex flex-col gap-5">
                 <p className="text-gray-800 text-lg">
-                    Team was excited. We named him Gangai, after the village Gangewadi where we found him.
+                    The team was excited. We named him Gangai, after the village Gangewadi where we found him.
 
                 </p>
             </div>
@@ -76,7 +76,7 @@ export const scroll_encounter = [
                 <Title mainTitle={"Harriers of India"} />
 
                 <p className="text-gray-800 text-lg">
-                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has one of the largest roost for Montagu’s and Pallid Harriers in Asia .
+                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has one of the largest roost for Montagu’s and Pallid harriers in Asia.
 
 
 
@@ -111,7 +111,7 @@ export const scroll_encounter = [
                 <Title mainTitle={"Three decades of tracking"} />
 
                 <p className="text-gray-800 text-lg">
-                    T. Ganesh's interest in Harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
+                    The team lead, T. Ganesh's interest in Harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
 
 
 
@@ -220,7 +220,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
-        caption: "caption",
+        caption: "",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/harrier_hovering.jpg',
     },
@@ -251,7 +251,7 @@ export const scroll_day_researcher = [
             </div>
         ),
         media_type: "image",
-        caption: "need to change",
+        caption: "",
         media_src:
             'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/day_of_researcher/flying-with-grasshopper.jpg',
     },
@@ -335,7 +335,7 @@ export const finding_roost
                     <Title mainTitle='Dewani' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        A female Montagu’s Harrier tracked via a GSM logger. As a juvenile in 2020, she made the single longest recorded stopover in the study, spending 48 days in the Thar Desert.
+                        A female Montagu’s harrier tracked via a GSM logger. As a juvenile in 2020, she made the single longest recorded stopover in the study, spending 48 days in the Thar Desert.
 
 
                     </p>
@@ -351,7 +351,7 @@ export const finding_roost
         {
             content: (
                 <div className="flex flex-col gap-5">
-                    <Title mainTitle='Gange' />
+                    <Title mainTitle='Gangei' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
                         A male tagged as a juvenile with a PTT device was the most consistently tracked bird in the dataset, providing autumn migration tracks across six consecutive years (2017–2022) and recording an exceptionally large stopover home range of 637.52 km² in 2022.
@@ -506,10 +506,10 @@ export const finding_roost
         {
             content: (
                 <div className="flex flex-col gap-5">
-                    <Title mainTitle='Same place, same time:' />
+                    <Title mainTitle='Same place, same time' />
                     <span className="text-gray-800 text-lg">
                         <b> </b>
-                        Tracking Gangai and its cousins over the years made us realise that harriers are remarkably faithful to their migration routes, much like the widely-known story of homing pigeons returning to their familiar places. They arrived at the same location as the previous year, around the same time and returned like clockwork.
+                        Tracking Gangai and his cousins over the years made us realise that harriers are remarkably faithful to their migration routes, much like the widely-known story of homing pigeons returning to their familiar places. They arrived at the same location as the previous year, around the same time and returned like clockwork.
 
 
 
@@ -538,13 +538,13 @@ export const finding_roost
                         <b> </b>
                         We learnt that during their autumn migration from their breeding grounds to their destinations, the harriers stopped over the Thar Desert for a long stretch of time. And, on their spring migration back to Kazakhstan, some stopped again at the Thar Desert, though briefly. Their main stopover was the floodplains of the Amu Darya River in Afghanistan. There were other spring stopovers too but only for short durations of two to three 3 days.
 
-                        <br /> <br />These findings helped us establish the importance of Thar Desert for these birds.
+                        {/* <br /> <br />These findings helped us establish the importance of Thar Desert for these birds. */}
 
 
 
 
                     </span>
-                    <span className='text-sm '>
+                    <span className='text-sm hidden'>
                         Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
                             href="https://www.sciencedirect.com/science/article/abs/pii/S0140196324001332">
                             Detour migration to circumvent the Himalayas in the Montagu’s Harrier Circus pygargus PAPER
@@ -556,7 +556,7 @@ export const finding_roost
 
 
                     </span>
-                    <span className='text-sm '>
+                    <span className='text-sm hidden '>
                         Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
                             href="https://www.sciencedirect.com/science/article/abs/pii/S0140196324001332">
                             Stopover by migrant Montagu’s Harriers in the Thar Desert is determined by vegetation greenness and grasshopper abundance but not locust outbreaks PAPER

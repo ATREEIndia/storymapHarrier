@@ -17,7 +17,7 @@ const How_do_birds_migrate = () => {
                 mainTitle="How do birds like Gangai make these epic journeys?"
             />
              <p className="mt-5">
-                  Before setting off, first they need to put on 30 to 50% more than their body weight as they prepare to migrate.The fat reserves will fuel these long flights. Triggered by changes in daylight, birds set off traveling along the migratory corridors or…
+                  Before setting off, first they need to put on 30 to 50% more than their body weight as they prepare to migrate. The fat reserves will fuel these long flights. Triggered by changes in daylight, birds set off traveling along the migratory corridors or using the highways in the sky.
 
 
                     
