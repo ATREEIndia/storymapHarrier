@@ -60,7 +60,7 @@ const Flashback = () => {
          <Magazine_img_tsx
             img_right={true}
             is_center={true}
-            caption="cropland "
+            caption="A nesting pair of harriers in the grasslands west of Astana in Kazakhstan"
             img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/bird_kazakisthan.jpg"
             content={
                 <div>

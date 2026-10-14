@@ -23,14 +23,17 @@ interface ScrollSectionProps {
   scroll_items: ScrollItem[]
   side?: 'left' | 'right' | string
   img_fill?: boolean
+  isEmptyContent?:boolean
   /** Restart a video from the beginning each time its slide becomes active */
   restartVideos?: boolean
 }
+
 
 const ScrollSection = ({
   scroll_items,
   side,
   img_fill,
+  isEmptyContent,
   restartVideos = false,
 }: ScrollSectionProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -147,7 +150,7 @@ const ScrollSection = ({
             return (
               <div
                 key={i}
-                className={`story-image absolute inset-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'pointer-events-none opacity-0'
+                className={`story-image absolute inset-0   ${isActive ? 'opacity-100' : 'pointer-events-none opacity-0'
                   }`}
                 aria-hidden={!isActive}
               >
@@ -212,7 +215,7 @@ const ScrollSection = ({
         <div className="w-full px-5 md:w-1/3">
           {scroll_items.map((item, i) => (
             <div key={i} className="scroll-text flex h-[100dvh] items-center justify-center">
-              <div className="pointer-events-auto rounded-xl bg-[#f5f0e8] p-6">{item.content}</div>
+              <div className={`pointer-events-auto rounded-xl bg-[#f5f0e8] p-6 ${isEmptyContent?'hidden':''}  `}>{item.content}</div>
             </div>
           ))}
         </div>

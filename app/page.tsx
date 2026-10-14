@@ -72,7 +72,7 @@ const page = () => {
       <div className={`${responsive}`}>
         <Title
           topTitle=""
-          mainTitle="The Growing Years"
+          mainTitle="The growing years"
         />
       </div>
 
@@ -84,7 +84,11 @@ const page = () => {
         content={<div className='flex flex-col gap-5'>
           <div>
 
-            Birds, mammals, insects, fishes and reptiles undertake seasonal movement or migration between breeding and non-breeding grounds in search of food.
+            Birds, mammals, insects, fishes and reptiles undertake seasonal movement or migration between breeding and non-breeding grounds in search of food and to escape harsh weather conditions.
+            <br/><br/>
+            Most birds put on 30–50% more than their body weight as they prepare to migrate. The fat reserves fuel long flights. Triggered by changes in daylight, birds set off traveling along the migratory corridors or highways in the sky.
+
+
           </div>
           <div>
             <b>Globe trotters</b>
@@ -189,7 +193,7 @@ const page = () => {
           />
 
         </div>
-        <ScrollSection2 img_fill={true} scroll_items={threats_img} />
+        <ScrollSection img_fill={true} scroll_items={threats_img} isEmptyContent={true} />
       </div>
 
       <div className='mt-10'>

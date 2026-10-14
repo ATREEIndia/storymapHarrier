@@ -113,13 +113,13 @@ export default function StoryMapResources() {
 
         {/* Search */}
         <div className="mb-8 space-y-4">
-          <input
+          {/* <input
             type="text"
             placeholder="Search resources, tags, or keywords..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#087f9b] focus:border-transparent text-sm"
-          />
+          /> */}
 
           {/* Category filter */}
           <div className="flex flex-wrap gap-3">
@@ -142,7 +142,7 @@ export default function StoryMapResources() {
         {/* Count */}
         <div className="mb-4 text-slate-600">
           <span className="font-medium">{filteredResources.length}</span>{' '}
-          resource{filteredResources.length !== 1 ? 's' : ''} found
+          resource{filteredResources.length !== 1 ? 's' : ''} 
         </div>
 
         {/* Grid */}

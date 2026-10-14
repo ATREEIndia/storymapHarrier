@@ -17,7 +17,10 @@ const How_do_birds_migrate = () => {
                 mainTitle="How do birds like Gangai make these epic journeys?"
             />
              <p className="mt-5">
-                  Before setting off, first they need to put on 30 to 50% more than their body weight as they prepare to migrate. The fat reserves will fuel these long flights. Triggered by changes in daylight, birds set off traveling along the migratory corridors or highways in the sky.
+                  Triggered by changes in daylight, birds set off traveling along the migratory corridors or highways in the sky. <br/><br/>
+
+Birds like waders put on massive body weight before setting on their migration journey, but not so the raptors, like Gangai. They opportunistically feed as they fly along their migration route. Unlike the waders, they use the thermals or wind currents to soar, which again helps them conserve their energy. 
+
 
 
                     

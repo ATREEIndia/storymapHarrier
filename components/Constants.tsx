@@ -76,7 +76,7 @@ export const scroll_encounter = [
                 <Title mainTitle={"Harriers of India"} />
 
                 <p className="text-gray-800 text-lg">
-                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has one of the largest roost for Montagu’s and Pallid harriers in Asia.
+                    Of the 16 harrier species present globally, the Indian subcontinent is an important wintering range for six species travelling from their breeding sites in Central Asia. India has one of the largest roosts of Montagu’s and Pallid harriers in Asia.
 
 
 
@@ -108,7 +108,7 @@ export const scroll_encounter = [
     {
         content: (
             <div className="flex flex-col gap-5">
-                <Title mainTitle={"Three decades of tracking"} />
+                <Title mainTitle={"A decade of tracking"} />
 
                 <p className="text-gray-800 text-lg">
                     The team lead, T. Ganesh's interest in Harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
@@ -119,7 +119,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "T. Ganesh, senior fellow; Arjun Kannan, PhD student; Prashanth M.B., researcher and Chian, field researcher",
+        caption: "The Harrier Research Team: T. Ganesh, senior fellow; Arjun Kannan, PhD student; Prashanth M.B., researcher and Chian, field researcher",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
@@ -270,6 +270,7 @@ export const finding_roost
                     />
 
                     <p className="text-gray-800 text-lg">
+
                         For the harrier surveyor, these evenings mean counting as many birds as possible in a small window, almost like taking attendance at school, tracking how many turn up through the season. The count gives us an idea if their numbers are holding steady or slipping.
 
                         <br /><br />We also scan wide areas to map movements and locate roosts, which reveals the species present, their maturity, male-female ratios and so on.
@@ -316,7 +317,8 @@ export const finding_roost
                         <Title mainTitle='Tracking harriers over the years' />
 
                         <p className="mt-5">
-                            Between 2017 and 2022, along with Gangai, we tagged eight other harriers– Dewani, Hira , Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli. We fitted them with transmitters. Tracking them through the years gave us a lot of new information.<br /><br />
+                            Between 2017 and 2022, along with Gangai, we tagged eight other harriers– Dewani, Hira , Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli. Their names were mostly derived from the places we found them. We fitted them with GSM loggers. Tracking them through the years gave us a lot of new information.
+                            <br /><br />
                             Explore the migratory paths of each of our tagged harriers from their wintering grounds in India to their breeding grounds in Kazakhstan.
                         </p>
 
@@ -335,7 +337,7 @@ export const finding_roost
                     <Title mainTitle='Dewani' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        A female Montagu’s harrier tracked via a GSM logger. As a juvenile in 2020, she made the single longest recorded stopover in the study, spending 48 days in the Thar Desert.
+                        A female Montagu’s Harrier, she was a juvenile when we started tracking her in 2020. She made the single longest recorded stopover in the study, spending 48 days in the Thar Desert.
 
 
                     </p>
@@ -351,10 +353,10 @@ export const finding_roost
         {
             content: (
                 <div className="flex flex-col gap-5">
-                    <Title mainTitle='Gangei' />
+                    <Title mainTitle='Gangai' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        A male tagged as a juvenile with a PTT device was the most consistently tracked bird in the dataset, providing autumn migration tracks across six consecutive years (2017–2022) and recording an exceptionally large stopover home range of 637.52 km² in 2022.
+                       Gangai was the most consistently tracked bird in the dataset, yielding autumn migration tracks across six consecutive years (2017–2022) and showing an exceptionally large stopover home range of 637.52 sq. km in 2022.
 
 
 
@@ -374,7 +376,7 @@ export const finding_roost
                     <Title mainTitle='Hira' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        A female harrier tagged with a GSM logger. Tracked as both a juvenile (2021) and an adult (2022), she recorded the highest number of location fixes in a single stopover season, with 3,526 fixes over a 31-day stay in 2022.
+                        This female harrier was tracked as both a juvenile (2021) and an adult (2022). She recorded the highest number of location fixes in a single stopover season, with 3,526 fixes over a 31-day stay in 2022.
 
 
                     </p>
@@ -393,7 +395,8 @@ export const finding_roost
                     <Title mainTitle='Mothiya' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        A female harrier tracked via a GSM transmitter across two autumn seasons (2021 as a juvenile and 2022 as an adult). She exhibited remarkably consistent stopover durations, staying for 18 days in 2021 and 16 days in 2022.
+                       Mothiya was a female harrier tracked across two autumn seasons (2021 as a juvenile and 2022 as an adult). She exhibited remarkably consistent stopover durations, staying for 18 days in 2021 and 16 days in 2022.
+
 
 
                     </p>
@@ -412,7 +415,7 @@ export const finding_roost
                     <Title mainTitle='Nellai' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        An adult male fitted with a PTT logger was tracked across five autumn migrations from 2018 to 2022, maintaining a relatively large home range of up to 363.69 km² during his 2018 stopover.
+                        This adult male was tracked across five autumn migrations from 2018 to 2022, maintaining a relatively large home range of up to 363.69 sq. km during his 2018 stopover.
 
 
 
@@ -432,7 +435,7 @@ export const finding_roost
                     <Title mainTitle='Paruthi' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        An adult male tracked via a PTT device across three consecutive years (2017–2019). He was a brief visitor to the Thar Desert, recording stopover durations as short as just one day in both 2017 and 2019.
+                       Paruthi, an adult male, was tracked across three consecutive years (2017–2019). He was a brief visitor to the Thar Desert, recording stopover durations as short as just one day in both 2017 and 2019.
 
 
                     </p>
@@ -451,7 +454,7 @@ export const finding_roost
                     <Title mainTitle='Poorni' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        An adult female tagged with a GSM logger. She was one of only two tagged harriers in the study to return to the specific capture and release site at Tal Chhapar Wildlife Sanctuary in a subsequent year (2022).
+                        An adult female, she was one of only two tagged harriers in the study to return to the specific capture and release site at Tal Chhapar Wildlife Sanctuary in the subsequent year (2022).
 
 
                     </p>
@@ -470,7 +473,7 @@ export const finding_roost
                     <Title mainTitle='Deo' />
                     <p className="text-gray-800 text-lg">
                         <b> </b><br></br>
-                        An adult male fitted with a PTT transmitter was tracked during the 2018 autumn migration. He recorded a 10-day stopover in the Thar Desert, covering a compact home range of 35.11 km².
+                        Deo, an adult male, was tracked during the 2018 autumn migration. He recorded a 10-day stopover in the Thar Desert, covering a compact home range of 35.11 sq. km.
 
 
 
@@ -490,7 +493,7 @@ export const finding_roost
                     <Title mainTitle='Rupeli' />
                     <p className="text-gray-800 text-lg">
                         <b> </b><br></br>
-                        An adult female tagged with a PTT device. Along with Poorni, she was the only other tracked bird to show site fidelity by returning to the Tal Chhapar sanctuary in a subsequent year (2019).
+                        Besides Poorni, Rupeli, an adult female, was the only tracked bird to show site fidelity, returning to the Tal Chhapar sanctuary in the subsequent year (2019).
 
 
                     </p>
@@ -683,7 +686,7 @@ export const predators_show = [
         name: "Jungle Cat",
         scientificName: "Felis chaus",
         habitat: "Grasslands, wetlands, reed beds, scrublands and agricultural landscapes",
-        fact: "Jungle Cats are strong hunters of rodents and often hunt around wetlands, farms and villages where small prey is abundant.",
+        fact: "Stealthy hunters, Jungle Cats lurk around farms, wetlands and villages, where small prey is abundant.",
         media: {
             type: "image",
             src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators1_img.jpg",
@@ -700,7 +703,7 @@ export const predators_show = [
         name: "Indian Fox",
         scientificName: "Vulpes bengalensis",
         habitat: "Open grasslands, thorny scrub, semi-arid landscapes, agricultural fields and other non-forested areas",
-        fact: "The Indian Fox is native to the Indian subcontinent and is particularly associated with open and dry landscapes rather than dense forests.",
+        fact: "The Indian Fox prefers the open landscapes where harriers roost, darting through scrub and grass so swiftly that it can vanish even before it is spotted.",
         media: {
             type: "image",
             src: "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators2_img.jpg",
@@ -783,10 +786,11 @@ export const predators_show = [
 
 export const EndCreditsGroups = [
     { title: 'Research', names: ['T. Ganesh ','Arjun Kannan',' Prashanth M. B.'] },
-    { title: 'Content', names: ['Maithreyi M. R.','Jaya Peter','Prashanth M. B.'] },
+    { title: 'Content', names: ['Jaya Peter','Prashanth M. B.', 'Maithreyi M. R.'] },
      { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
-    { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Pixabay'] },    
+    { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Thalavaipandi S.','Vinod', 'Sankar Subramaniam','Pixabay'] },    
     { title: 'Illustrations', names: ['Ketaki Watve',''] },    
+    { title: 'Special Thanks', names: ['Chiyan',''] },    
    
     { title: 'Maps', names: ['Esri ArcGIS'] },
 ]

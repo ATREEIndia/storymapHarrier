@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Title from './Title'
+import { responsive } from './Constants'
 
 export interface CreditGroup {
   title: string
@@ -40,16 +41,18 @@ const EndCredits = ({ heading = 'Credits', groups, footnote }: EndCreditsProps) 
     visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
   }`
 
+   const spacing = 'p-5 md:px-20 lg:px-30 md:pt-10   ';
+
   return (
-    <section ref={containerRef} className="w-full bg-[#f5f0e8] px-5 py-16 md:pt-24">
-      <div className="mx-auto max-w-5xl">
-        <div className='my-5'> 
+    <section ref={containerRef} className={`w-full bg-[#f5f0e8]  md:pt-4 ${responsive}`}>
+      <div className="">
+        <div className={spacing}> 
             <Title  mainTitle='Credits '/>
 
         </div>
        
 
-        <div className="grid gap-8 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-3 lg:gap-12">
+        <div className={`grid gap-15  grid-cols-2 sm:text-left lg:grid-cols-4 lg:gap-12  p-5 md:px-20 lg:px-30`}>
           {groups.map((group, i) => (
             <div
               key={group.title}
