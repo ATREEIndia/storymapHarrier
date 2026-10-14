@@ -340,7 +340,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/dewani.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -360,7 +360,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/gange.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -418,7 +418,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/nellai.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -437,7 +437,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/paruthi.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -456,7 +456,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/poorni.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -476,7 +476,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/deo.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -495,7 +495,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/rupeli.jpg" />
                 </div>
             ),
             media_type: "image",
