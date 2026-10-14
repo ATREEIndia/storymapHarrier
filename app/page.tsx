@@ -70,7 +70,7 @@ const page = () => {
       <div className={`${responsive}`}>
         <Title
           topTitle=""
-          mainTitle="Growth Stages"
+          mainTitle="The Growing Years"
         />
       </div>
 

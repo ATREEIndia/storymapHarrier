@@ -432,7 +432,7 @@ export const finding_roost
                     <Title mainTitle='Paruthi' />
                     <p className="text-gray-800 text-lg">
                         <b></b><br></br>
-                        An adult male tracked via a PTT device across three consecutive years (2017–2019). He was a brief visitor to the Thar Desert, recording stopover durations as short as just one day in both 2017 and 2019
+                        An adult male tracked via a PTT device across three consecutive years (2017–2019). He was a brief visitor to the Thar Desert, recording stopover durations as short as just one day in both 2017 and 2019.
 
 
                     </p>
@@ -490,7 +490,7 @@ export const finding_roost
                     <Title mainTitle='Rupeli' />
                     <p className="text-gray-800 text-lg">
                         <b> </b><br></br>
-                        An adult female tagged with a PTT device. Along with Poorni, she was the only other tracked bird to show site fidelity by returning to the Tal Chhapar sanctuary in a subsequent year (2019)
+                        An adult female tagged with a PTT device. Along with Poorni, she was the only other tracked bird to show site fidelity by returning to the Tal Chhapar sanctuary in a subsequent year (2019).
 
 
                     </p>
@@ -533,7 +533,7 @@ export const finding_roost
         {
             content: (
                 <div className="flex flex-col gap-5">
-                    <Title mainTitle='Stopover home:' />
+                    <Title mainTitle='Stopover home' />
                     <span className="text-gray-800 text-lg">
                         <b> </b>
                         We learnt that during their autumn migration from their breeding grounds to their destinations, the harriers stopped over the Thar Desert for a long stretch of time. And, on their spring migration back to Kazakhstan, some stopped again at the Thar Desert, though briefly. Their main stopover was the floodplains of the Amu Darya River in Afghanistan. There were other spring stopovers too but only for short durations of two to three 3 days.
@@ -574,7 +574,7 @@ export const finding_roost
         {
             content: (
                 <div className="flex flex-col gap-5">
-                    <Title mainTitle='Detour migration:' />
+                    <Title mainTitle='Detour migration' />
                     <p className="text-gray-800 text-lg">
                         <b></b>
                         Another revelation was that migrating birds do not always take the shortest route between their breeding and wintering sites. Years of tracking showed us how the harriers took a detour of the Himalaya even if it meant more flying hours. This detour was made possible by the availability of open natural ecosystems – the Thar Desert in autumn and the Amu Darya River in spring.
