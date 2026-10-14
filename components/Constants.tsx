@@ -783,7 +783,7 @@ export const predators_show = [
 
 export const EndCreditsGroups = [
     { title: 'Research', names: ['T. Ganesh ','Arjun Kannan',' Prashanth M. B.'] },
-    { title: 'Content', names: ['Maithreyi M. R.','Jaya Peter',] },
+    { title: 'Content', names: ['Maithreyi M. R.','Jaya Peter','Prashanth M. B.'] },
      { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
     { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Pixabay'] },    
     { title: 'Illustrations', names: ['Ketaki Watve',''] },    
