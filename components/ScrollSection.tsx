@@ -7,6 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== 'undefined') {
+  ScrollTrigger.clearScrollMemory('manual')
+}
 
 export interface ScrollItem {
   content: ReactNode
@@ -35,35 +38,35 @@ const ScrollSection = ({
   const [sectionInView, setSectionInView] = useState(false)
 
   // Scroll triggers: which slide is active, and whether the section is on screen
-  useGSAP(
-    () => {
-      if (!scroll_items?.length) return
+  // useGSAP(
+  //   () => {
+  //     if (!scroll_items?.length) return
 
-      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text', containerRef.current)
-      sections.forEach((section, index) => {
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top 50%',
-          end: 'bottom 50%',
-          refreshPriority: -1,
-          onToggle: (self) => {
-            if (self.isActive) setCurrentIndex(index)
-          },
-        })
-      })
+  //     const sections = gsap.utils.toArray<HTMLElement>('.scroll-text', containerRef.current)
+  //     sections.forEach((section, index) => {
+  //       ScrollTrigger.create({
+  //         trigger: section,
+  //         start: 'top 50%',
+  //         end: 'bottom 50%',
+  //         refreshPriority: -1,
+  //         onToggle: (self) => {
+  //           if (self.isActive) setCurrentIndex(index)
+  //         },
+  //       })
+  //     })
 
-      // Section visibility, used to play/pause videos
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: 'top 75%',
-        end: 'bottom 25%',
-        onToggle: (self) => setSectionInView(self.isActive),
-      })
+  //     // Section visibility, used to play/pause videos
+  //     ScrollTrigger.create({
+  //       trigger: containerRef.current,
+  //       start: 'top 75%',
+  //       end: 'bottom 25%',
+  //       onToggle: (self) => setSectionInView(self.isActive),
+  //     })
 
-      requestAnimationFrame(() => ScrollTrigger.refresh())
-    },
-    { scope: containerRef, dependencies: [scroll_items] }
-  )
+  //     requestAnimationFrame(() => ScrollTrigger.refresh())
+  //   },
+  //   { scope: containerRef, dependencies: [scroll_items] }
+  // )
 
   // Show only the active slide's media
   useGSAP(
@@ -74,6 +77,56 @@ const ScrollSection = ({
       gsap.set(layers[currentIndex], { opacity: 1 })
     },
     { scope: containerRef, dependencies: [currentIndex, scroll_items] }
+  )
+
+  useGSAP(
+    () => {
+      if (!scroll_items?.length) return
+
+      const sections = gsap.utils.toArray<HTMLElement>('.scroll-text', containerRef.current)
+
+      const triggers = sections.map((section) =>
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 50%',
+          end: 'bottom 50%',
+          refreshPriority: -1,
+          onToggle: () => sync(),
+        })
+      )
+
+      // Derive the active slide from real trigger state, not from a single event
+      function sync() {
+        const active = triggers.findIndex((t) => t.isActive)
+        if (active !== -1) {
+          setCurrentIndex(active)
+          return
+        }
+        // Between triggers / above / below: snap to nearest so we never get stuck
+        const y = window.scrollY + window.innerHeight / 2
+        if (y < triggers[0].start) setCurrentIndex(0)
+        else if (y > triggers[triggers.length - 1].end) setCurrentIndex(triggers.length - 1)
+      }
+
+      const visibility = ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: 'top 75%',
+        end: 'bottom 25%',
+        onToggle: (self) => setSectionInView(self.isActive),
+      })
+
+      // Re-sync after every refresh (fires after scroll restoration, image loads, resizes)
+      const onRefresh = () => {
+        sync()
+        setSectionInView(visibility.isActive)
+      }
+      ScrollTrigger.addEventListener('refresh', onRefresh)
+
+      requestAnimationFrame(() => ScrollTrigger.refresh())
+
+      return () => ScrollTrigger.removeEventListener('refresh', onRefresh)
+    },
+    { scope: containerRef, dependencies: [scroll_items] }
   )
 
   if (!scroll_items?.length) return null
@@ -94,8 +147,8 @@ const ScrollSection = ({
             return (
               <div
                 key={i}
-                className={`story-image absolute inset-0 ${isActive ? '' : 'pointer-events-none'}`}
-                style={{ opacity: i === 0 ? 1 : 0 }}
+                className={`story-image absolute inset-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'pointer-events-none opacity-0'
+                  }`}
                 aria-hidden={!isActive}
               >
                 {item.media_type === 'image' &&

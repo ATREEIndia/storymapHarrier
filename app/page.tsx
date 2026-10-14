@@ -2,7 +2,7 @@
 import AddionalInfo from '@/components/AddionalInfo';
 import AnimatedStages from '@/components/AnimatedStages';
 import Cafe_in_Grassland from '@/components/Cafe_in_Grassland';
-import { finding_roost, responsive, scroll_day_researcher, scroll_encounter, threats_img } from '@/components/Constants';
+import { EndCreditsGroups, finding_roost, responsive, scroll_day_researcher, scroll_encounter, threats_img } from '@/components/Constants';
 import FeatureImage from '@/components/FeatureImage';
 
 import Flashback from '@/components/Flashback';
@@ -38,9 +38,11 @@ import ScrollMapx2 from '@/components/ScrollMapx2';
 import ScrollMapx3 from '@/components/ScrollMapx3';
 import ScrollSectionx3 from '@/components/ScrollSectionx3';
 import PredatorShowcase from '@/components/PredatorShowcase';
+import EndCredits from '@/components/EndCreadits';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
+  const year=new Date().getFullYear()
 
 
   const containerRef_roost = useRef<HTMLDivElement>(null)
@@ -57,7 +59,7 @@ const page = () => {
   }, [])
 
 
-  
+
   return (
     <main className='w-full flex flex-col bg-[#f5f0e8]'>
 
@@ -88,7 +90,7 @@ const page = () => {
             <b>Globe trotters</b>
             <ul className="list-disc pl-6">
               <li>
-                Can you imagine flying nonstop for 9 days without food? The Bar-tailed godwit flies 7000 miles non stop, day and night, across the Pacific from Alaska to New Zealand 
+                Can you imagine flying nonstop for 9 days without food? The Bar-tailed godwit flies 7000 miles non stop, day and night, across the Pacific from Alaska to New Zealand
               </li>
 
               <li>
@@ -131,7 +133,7 @@ const page = () => {
           content={<div className='flex flex-col gap-5'>
             <div>
 
-            The modern understanding of bird migration began in the 1890s when a Danish man, Hans Christian Cornelius Mortensen, fastened a ring with a number and address to a bird's leg. When the birds ringed in one part of the continent were picked up in another, we realised for the first time that birds fly long distances and overturn bizarre theories that swallows sank into the bottom of the lakes during winter. It also helped establish flyways, as paths used by migrating birds to traverse to their wintering grounds
+              The modern understanding of bird migration began in the 1890s when a Danish man, Hans Christian Cornelius Mortensen, fastened a ring with a number and address to a bird's leg. When the birds ringed in one part of the continent were picked up in another, we realised for the first time that birds fly long distances and overturn bizarre theories that swallows sank into the bottom of the lakes during winter. It also helped establish flyways, as paths used by migrating birds to traverse to their wintering grounds
 
             </div>
 
@@ -152,8 +154,8 @@ const page = () => {
 
       <div className='mt-10'>
         <What_does_it_tells />
-      </div> 
-      
+      </div>
+
       {/* <div className='mt-10'>
         <Predator />
       </div> */}
@@ -165,7 +167,7 @@ const page = () => {
         <How_many_roost />
       </div> */}
 
-     
+
 
 
 
@@ -181,10 +183,10 @@ const page = () => {
 
       <div className='mt-10'>
         <div className={`${responsive}`}>
-            <Title
-                topTitle=""
-                mainTitle="Threats"
-            />
+          <Title
+            topTitle=""
+            mainTitle="Threats"
+          />
 
         </div>
         <ScrollSection2 img_fill={true} scroll_items={threats_img} />
@@ -193,14 +195,14 @@ const page = () => {
       <div className='mt-10'>
         <What_happens_home_not_exist />
       </div>
-      
-      
+
+
 
       <div className='mt-10'>
         <Resources />
       </div>
 
-      
+
 
 
 
@@ -222,6 +224,16 @@ const page = () => {
       <Title customClass={`${responsive} px-4 mt-10`}
         topTitle='' mainTitle="Stages" />
       <AnimatedStages /> */}
+
+      <EndCredits
+        groups={EndCreditsGroups}
+        footnote={`© ${year} ATREE. All rights reserved.`}
+      />
+      <div className='w-full p-4 bg-white flex items-center justify-center'>
+        <h1 className='text-amber-700 text-xs'>Contact us on <a  href="mailto:communications@atree.org" className="underline hover:text-blue-600 transition-colors"
+        > communications@atree.org</a></h1>
+
+      </div>
 
     </main>
   )

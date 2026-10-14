@@ -7,7 +7,7 @@ export const scroll_encounter = [
         content: (
             <div className="flex flex-col gap-5 pt-10 xl:p-0">
                 <Title
-                    
+
                     mainTitle="The day we found Gangai"
                 />
 
@@ -779,4 +779,14 @@ export const predators_show = [
         illustration:
             "https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/predators/Predators6.png",
     },
+]
+
+export const EndCreditsGroups = [
+    { title: 'Research', names: ['T. Ganesh ','Arjun Kannan',' Prashanth M. B.'] },
+    { title: 'Content', names: ['Maithreyi M. R.','Jaya Peter',] },
+     { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
+    { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Pixabay'] },    
+    { title: 'Illustrations', names: ['Ketaki Watve',''] },    
+   
+    { title: 'Maps', names: ['Esri ArcGIS'] },
 ]
