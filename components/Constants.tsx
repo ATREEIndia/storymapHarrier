@@ -111,7 +111,7 @@ export const scroll_encounter = [
                 <Title mainTitle={"A decade of tracking"} />
 
                 <p className="text-gray-800 text-lg">
-                    The team lead, T. Ganesh's interest in Harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
+                    The team lead, T. Ganesh's interest in harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
 
 
 
@@ -119,7 +119,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "The Harrier Research Team: T. Ganesh, senior fellow; Arjun Kannan, PhD student; Prashanth M.B., researcher and Chian, field researcher",
+        caption: "The Harrier Research Team: T. Ganesh, senior fellow; Arjun Kannan, PhD candidate; Prashanth M.B., researcher and Chian, field researcher",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
@@ -585,12 +585,12 @@ export const finding_roost
 
 
                     </p>
-                    <span className='text-sm '>
+                    {/* <span className='text-sm '>
                         Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
                             href="https://link.springer.com/article/10.1186/s40462-025-00568-z">
                             Detour migration to circumvent the Himalayas in the Montagu’s Harrier Circus pygargus PAPER
                         </a>
-                    </span>
+                    </span> */}
 
 
                 </div>

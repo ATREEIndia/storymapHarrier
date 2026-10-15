@@ -86,7 +86,7 @@ const page = () => {
 
             Birds, mammals, insects, fishes and reptiles undertake seasonal movement or migration between breeding and non-breeding grounds in search of food and to escape harsh weather conditions.
             <br/><br/>
-            Most birds put on 30–50% more than their body weight as they prepare to migrate. The fat reserves fuel long flights. Triggered by changes in daylight, birds set off traveling along the migratory corridors or highways in the sky.
+            Most birds put on 30–50% more than their body weight as they prepare to migrate. The fat reserves fuel long flights. 
 
 
           </div>

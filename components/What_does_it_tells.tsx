@@ -107,9 +107,9 @@ const What_does_it_tells = () => {
 
 
                         </p>
-                        <span className='text-sm '>
+                        {/* <span className='text-sm '>
                             Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline' href="https://nsojournals.onlinelibrary.wiley.com/doi/10.1002/oik.11374">Secondary seed dispersal by migrant harriers in India</a>
-                        </span>
+                        </span> */}
                         
 
 
