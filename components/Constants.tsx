@@ -197,9 +197,7 @@ export const scroll_day_researcher = [
                 <Title mainTitle="Watching, noting" />
 
                 <p className="text-gray-800 text-lg">
-                    One of the harriers perched on a pole as though surveying the entire landscape before beginning its day’s hunt.
-
-
+                   Harriers typically perch on poles, surveying the entire landscape before beginning their day’s hunt. 
 
                 </p>
             </div>
@@ -214,8 +212,7 @@ export const scroll_day_researcher = [
         content: (
             <div className="flex flex-col gap-5">
                 <p className="text-gray-800 text-lg">
-                    It swooped down swiftly, gliding over the grass blades and pounced upon a prey before returning to its perch. Harriers fly to a suitable spot to dissect and consume the prey.
-
+                    They swoop swiftly over the grass, pouncing on their prey before returning to a perch. They usually look for a suitable spot to dissect and consume the prey. 
                 </p>
             </div>
         ),
