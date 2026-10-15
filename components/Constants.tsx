@@ -111,7 +111,7 @@ export const scroll_encounter = [
                 <Title mainTitle={"A decade of tracking"} />
 
                 <p className="text-gray-800 text-lg">
-                    The team lead, T. Ganesh's interest in harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with satellite tags at 6 sites.
+                    The team lead, T. Ganesh's interest in harriers goes back to the early 1990s when he, as a budding researcher, started counting harrier roosts. One such was a roost on the outskirts of Hyderabad, which he studied for 7 years. <br /><br />The study resumed in ATREE in 2015, when Ganesh and his small team of researchers began tracking Montagu's harrier migration by fitting them with transmitters at 3 sites.
 
 
 
@@ -314,7 +314,7 @@ export const finding_roost
                         <Title mainTitle='Tracking harriers over the years' />
 
                         <p className="mt-5">
-                            Between 2017 and 2022, along with Gangai, we tagged eight other harriers– Dewani, Hira , Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli. Their names were mostly derived from the places we found them. We fitted them with GSM loggers. Tracking them through the years gave us a lot of new information.
+                            Between 2017 and 2022, along with Gangai, we tagged eight other harriers– Dewani, Hira , Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli. Their names were mostly derived from the places we found them. We fitted them with transmitters. Tracking them through the years gave us a lot of new information.
                             <br /><br />
                             Explore the migratory paths of each of our tagged harriers from their wintering grounds in India to their breeding grounds in Kazakhstan.
                         </p>
