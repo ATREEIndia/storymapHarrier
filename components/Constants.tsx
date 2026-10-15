@@ -748,7 +748,7 @@ export const predators_show = [
 
     {
         id: "5",
-        name: "Shepherd Dog",
+        name: "Feral Dog",
         scientificName: "Canis lupus familiaris",
         habitat: "Human settlements, villages, agricultural landscapes and grazing areas",
         fact: "Free-ranging and working dogs can occur around livestock and human settlements and may interact with wildlife in agricultural and grassland landscapes.",
