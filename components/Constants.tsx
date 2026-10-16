@@ -326,7 +326,7 @@ export const finding_roost
             media_type: "image",
             caption: "These maps track the migration of individual harriers through the Thar Desert: (1) Dewani 2) Gangai 3) Hira 4) Mothiya, 5) Nellai 6) Paruthi 7) Poorni 8) Deo 9) Rupeli. Red dots indicate where each harrier was tagged.",
             media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/all_trails.png',
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/harrier_with_tracker.jpg',
         },
         {
             content: (
