@@ -379,7 +379,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/hira.jpg" />
                 </div>
             ),
             media_type: "image",
@@ -399,7 +399,7 @@ export const finding_roost
 
                     </p>
                     <img
-                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/mother_harrier_with_chicks.jpg" />
+                        src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/mothiya.jpg" />
                 </div>
             ),
             media_type: "image",
