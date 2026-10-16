@@ -40,7 +40,7 @@ const What_happens_home_not_exist = () => {
             <Magazine_img_tsx
                 is_center={true}
                 img_right={false}
-                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/windfarms_illustration.png"
+                video_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/video/harrier_end_video.mp4"
                 content={
                     <div>
 
