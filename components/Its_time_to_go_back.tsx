@@ -8,7 +8,7 @@ const Its_time_to_go_back = () => {
             <Magazine_img_tsx
                 is_center={false}
                 img_right={true}
-                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/harrier.png"
+                img_src="https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/train.png"
                 content={
                     <div>
 
