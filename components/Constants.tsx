@@ -784,6 +784,10 @@ export const predators_show = [
 
 export const EndCreditsGroups = [
     { title: 'Research', names: [
+        'T. Ganesh',
+  'Arjun Kannan',
+  'Prashanth M. B.',
+  'S. Tamizhazhagan',
   'S. Thalavaipandi',
   'S. Saravanan',
   'S. Selvakumar',
@@ -793,15 +797,13 @@ export const EndCreditsGroups = [
   'K. Sidharth',
   'Ganesh Rathod',
   'Anoop N. R.',
-  'T. Ganesh',
-  'Arjun Kannan',
-  'Prashanth M. B.'
+  
 ]},
     { title: 'Content', names: ['Jaya Peter','Prashanth M. B.', 'Maithreyi M. R.'] },
      { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
     { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Thalavaipandi S.','Vinod Kumar', 'Sankar Subramaniam','Pixabay'] },    
     { title: 'Illustrations', names: ['Ketaki Watve',''] },    
-    { title: 'Special Thanks', names: ['S. Tamizhazhagan',''] },    
+    // { title: 'Special Thanks', names: ['S. Tamizhazhagan',''] },    
    
     { title: 'Maps', names: ['Esri ArcGIS'] },
 ]
