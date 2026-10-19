@@ -799,7 +799,7 @@ export const EndCreditsGroups = [
 ]},
     { title: 'Content', names: ['Jaya Peter','Prashanth M. B.', 'Maithreyi M. R.'] },
      { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
-    { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Thalavaipandi S.','Vinod', 'Sankar Subramaniam','Pixabay'] },    
+    { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Thalavaipandi S.','Vinod Kumar', 'Sankar Subramaniam','Pixabay'] },    
     { title: 'Illustrations', names: ['Ketaki Watve',''] },    
     { title: 'Special Thanks', names: ['S. Tamizhazhagan',''] },    
    
