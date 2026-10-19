@@ -21,7 +21,7 @@ const Grasslands_wasteland = () => {
                         <p className="mt-5">
                             In India, the grasslands are referred to as wastelands and are fast disappearing. Historically, the British valued forests and considered grassland ecosystems as unproductive. This legacy, unfortunately, has lived on. <br/><br/>
  
-Most of the wintering sites of Montague’s Harriers, Tal chappar, Desert National Park, the savannah grasslands all feature in the wasteland atlas of India. This means that these precious biomes will be  transformed for development, farming, military, afforestation, renewable energy and other purposes. Less than one percent come under the protected areas network. 
+Most of the wintering sites of Montagu’s harriers, Tal chappar, Desert National Park, the savannah grasslands all feature in the wasteland atlas of India. This means that these precious biomes will be  transformed for development, farming, military, afforestation, renewable energy and other purposes. Less than one percent come under the protected areas network. 
 
 
 

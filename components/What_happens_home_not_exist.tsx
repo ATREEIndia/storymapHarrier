@@ -21,17 +21,7 @@ const What_happens_home_not_exist = () => {
 
 
                         <p className="mt-5">
-                            Our study reveals that the harrier numbers have been declining over the recent years. As a grassland gives way to industry, agriculture or other forms of development, the familiar sites that harriers depend on can completely disappear or become less suitable. For birds like Gangai, Dewani, Hira, Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli, who cross mountains and deserts retracing a memory of thousands of years, trusting the same grass patch will be waiting for them when they arrive, finding a new site may not be as straightforward.
-
-                         
-
-
-
-
-
-
-
-
+                            Our study reveals that the harrier numbers have been declining over the recent years. As a grassland gives way to industry, agriculture or other forms of development, the familiar sites that harriers depend on can completely disappear or become less suitable. For birds like Gangai, Dewani, Hira, Mothiya, Nellai, Paruthi, Poorni, Deo and Rupeli, who cross mountains and deserts retracing a memory of thousands of years, trusting the same grass patch will be waiting for them when they arrive, finding a new site may not be as straightforward. 
                         </p>
 
 
@@ -48,23 +38,14 @@ const What_happens_home_not_exist = () => {
 
                         <p className="mt-5">
                                If they do not find adequate food and sheltering homes in their wintering grounds, could it impact them when they return to Kazakhstan to breed and raise their chicks? Questions like this make it imperative to keep our research going. And to extend our focus beyond the wintering homes, to cover the migratory paths and the breeding grounds.
-
-                         
-
-
-
-
-
-
-
-
                         </p>
 
 
-                    </div>}
+                    </div> 
+                    }   
             />
 
-        </div>
+        </div> 
     )
 }
 
