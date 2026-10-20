@@ -39,6 +39,7 @@ import ScrollMapx3 from '@/components/ScrollMapx3';
 import ScrollSectionx3 from '@/components/ScrollSectionx3';
 import PredatorShowcase from '@/components/PredatorShowcase';
 import EndCredits from '@/components/EndCreadits';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
@@ -184,6 +185,17 @@ const page = () => {
       <div className='mt-10'>
         <Grasslands_wasteland />
       </div>
+       <div className='mt-10'>
+        <div className={`${responsive}`}>
+          <Title
+            topTitle=""
+            mainTitle="Before and After"
+          />
+
+        </div>
+        </div>
+
+      <BeforeAfterSlider/>
 
       <div className='mt-10'>
         <div className={`${responsive}`}>
