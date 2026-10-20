@@ -17,7 +17,7 @@ const HeaderVideo = () => {
           <div className="text-left text-white">
             <h1 className="text-6xl font-black leading-none">A Life</h1>
             <p className="mt-2  font-bold text-3xl">Without Boundaries</p>
-            <i className="mt-2 font-light">the Harrier chronicles</i>
+            <i className="mt-2 font-light">The Montagu’s Harrier chronicles</i>
           </div>
         </div>
       </div>

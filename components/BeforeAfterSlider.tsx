@@ -70,6 +70,7 @@ const BeforeAfterSlider = ({
             >
                 {/* After image (bottom layer) */}
                 <Image
+                unoptimized
                     src={afterSrc}
                     alt={afterLabel}
                     fill
@@ -84,6 +85,7 @@ const BeforeAfterSlider = ({
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 >
                     <Image
+                    unoptimized
                         src={beforeSrc}
                         alt={beforeLabel}
                         fill
