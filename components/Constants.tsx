@@ -212,7 +212,7 @@ export const scroll_day_researcher = [
         content: (
             <div className="flex flex-col gap-5">
                 <p className="text-gray-800 text-lg">
-                    They swoop swiftly over the grass, pouncing on their prey before returning to a perch. They usually look for a suitable spot to dissect and consume the prey. 
+                   In flight, they remain close to the grass bed, scanning for prey. When they spot one, such as a grasshopper, they do a back flip in the air and swoop down to grab it.
                 </p>
             </div>
         ),
