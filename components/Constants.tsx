@@ -799,7 +799,7 @@ export const EndCreditsGroups = [
   'Anoop N. R.',
   
 ]},
-    { title: 'Content', names: ['Jaya Peter','Prashanth M. B.', 'Maithreyi M. R.'] },
+    { title: 'Content', names: ['Prashanth M. B.','Jaya Peter', 'Maithreyi M. R.','Arjun Kannan'] },
      { title: 'Web Design & Development', names: ['Sreekuttan V. N.'] },
     { title: 'Photo & Video', names: ['Vipul Ramanuj','Jayshree Borgohain','Thalavaipandi S.','Vinod Kumar', 'Sankar Subramaniam','Pixabay'] },    
     { title: 'Illustrations', names: ['Ketaki Watve',''] },    
