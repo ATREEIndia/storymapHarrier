@@ -40,6 +40,7 @@ import ScrollSectionx3 from '@/components/ScrollSectionx3';
 import PredatorShowcase from '@/components/PredatorShowcase';
 import EndCredits from '@/components/EndCreadits';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import EndCredits2 from '@/components/EndCredits2';
 gsap.registerPlugin(ScrollTrigger)
 
 const page = () => {
@@ -241,7 +242,7 @@ const page = () => {
         topTitle='' mainTitle="Stages" />
       <AnimatedStages /> */}
 
-      <EndCredits
+      <EndCredits2
         groups={EndCreditsGroups}
         footnote={`© ${year} ATREE. All rights reserved.`}
       />
