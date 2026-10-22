@@ -531,6 +531,35 @@ export const finding_roost
             media_src:
                 'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/sameplace.jpg',
         },
+        
+
+        {
+            content: (
+                <div className="flex flex-col gap-5">
+                    <Title mainTitle='Detour migration' />
+                    <p className="text-gray-800 text-lg">
+                        <b></b>
+                        Another revelation was that migrating birds do not always take the shortest route between their breeding and wintering sites. Years of tracking showed us how the harriers took a detour of the Himalaya even if it meant more flying hours. This detour was made possible by the availability of open natural ecosystems – the Thar Desert in autumn and the Amu Darya River in spring.
+
+
+
+                    </p>
+                    {/* <span className='text-sm '>
+                        Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
+                            href="https://link.springer.com/article/10.1186/s40462-025-00568-z">
+                            Detour migration to circumvent the Himalayas in the Montagu’s Harrier Circus pygargus PAPER
+                        </a>
+                    </span> */}
+
+
+                </div>
+            ),
+            media_type: "image",
+            caption: "",
+            media_src:
+                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/detour.jpg',
+        },
+
         {
             content: (
                 <div className="flex flex-col gap-5">
@@ -572,32 +601,7 @@ export const finding_roost
                 'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/stopover.jpg',
         },
 
-        {
-            content: (
-                <div className="flex flex-col gap-5">
-                    <Title mainTitle='Detour migration' />
-                    <p className="text-gray-800 text-lg">
-                        <b></b>
-                        Another revelation was that migrating birds do not always take the shortest route between their breeding and wintering sites. Years of tracking showed us how the harriers took a detour of the Himalaya even if it meant more flying hours. This detour was made possible by the availability of open natural ecosystems – the Thar Desert in autumn and the Amu Darya River in spring.
 
-
-
-                    </p>
-                    {/* <span className='text-sm '>
-                        Read more: <a target='_blank' className='text-orange-900 italic hover:font-semibold underline'
-                            href="https://link.springer.com/article/10.1186/s40462-025-00568-z">
-                            Detour migration to circumvent the Himalayas in the Montagu’s Harrier Circus pygargus PAPER
-                        </a>
-                    </span> */}
-
-
-                </div>
-            ),
-            media_type: "image",
-            caption: "",
-            media_src:
-                'https://atree-communication.s3.amazonaws.com/storymap-harrier/photo/finding_roost/detour.jpg',
-        },
         // {
         //     content: (
         //         <div className="flex flex-col gap-5">
