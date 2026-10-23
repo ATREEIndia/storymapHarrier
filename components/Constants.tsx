@@ -119,7 +119,7 @@ export const scroll_encounter = [
             </div>
         ),
         media_type: "image",
-        caption: "The Harrier Research Team: T. Ganesh, senior fellow; Arjun Kannan, PhD candidate; Prashanth M.B., researcher and Chian, field researcher",
+        caption: "The Harrier Research Team: T. Ganesh, senior fellow; Arjun Kannan, PhD candidate; Prashanth M.B., researcher and Chian, researcher",
         media_src:
             'https://atree-communication.s3.ap-south-1.amazonaws.com/storymap-harrier/photo/researchers_with_bicycles.jpg',
     },
